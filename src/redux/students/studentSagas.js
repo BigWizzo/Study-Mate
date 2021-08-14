@@ -1,11 +1,11 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import studentActionTypes from './studentActionTypes';
-import * as studentService from '../../config/studentService';
+import * as apiService from '../../config/apiService';
 import { loginStudentFailure, loginStudentSuccess } from './studentActions';
 
 function* loginStudent({ payload }) {
   try {
-    const studentDetails = yield call(studentService.loginStudent, payload);
+    const studentDetails = yield call(apiService.loginStudent, payload);
     const { token, student, message } = studentDetails;
     yield localStorage.setItem('token', token);
     yield put(loginStudentSuccess({ ...student, message }));

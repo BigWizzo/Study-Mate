@@ -10,7 +10,6 @@ const studentReducer = (state = initialState, action) => {
 
   switch (type) {
     case studentActionTypes.LOGIN_IN_SUCCESS:
-      debugger;
       return {
         ...state,
         loading: false,
