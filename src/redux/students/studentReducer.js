@@ -2,18 +2,19 @@ import studentActionTypes from './studentActionTypes';
 
 const initialState = {
   loading: false,
-  data: [],
+  student: {},
 };
 
-const countrriesReducer = (state = initialState, action) => {
+const studentReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
     case studentActionTypes.LOGIN_IN_SUCCESS:
+      debugger;
       return {
         ...state,
         loading: false,
-        data: payload,
+        student: payload,
       };
 
     case studentActionTypes.LOGIN_IN_FAILURE:
@@ -28,4 +29,4 @@ const countrriesReducer = (state = initialState, action) => {
   return state;
 };
 
-export default countrriesReducer;
+export default studentReducer;

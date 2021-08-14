@@ -4,7 +4,14 @@ import * as studentService from '../../config/studentService';
 import { loginStudentFailure, loginStudentSuccess } from './studentActions';
 
 function* loginStudent({ payload }) {
-  yield call(studentService.loginStudent, payload);
+  try {
+    const studentDetails = yield call(studentService.loginStudent, payload);
+    const { token, student, message } = studentDetails;
+    yield localStorage.setItem('token', token);
+    yield put(loginStudentSuccess({ ...student, message }));
+  } catch (error) {
+    yield put(loginStudentFailure(error));
+  }
   // const config = {
   // headers: {
   // Authorization: 'Bearer ' + localStorage.setItem('token'),
