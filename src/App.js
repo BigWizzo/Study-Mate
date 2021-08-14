@@ -1,8 +1,11 @@
+import SubjectList from './components/subjects/SubjectList';
 
 function App() {
   return (
     <div>
-      <h1>Study Mate</h1>
+      <>
+        <SubjectList />
+      </>
     </div>
   );
 }
