@@ -4,8 +4,13 @@ import * as studentService from '../../config/studentService';
 import { loginStudentFailure, loginStudentSuccess } from './studentActions';
 
 function* loginStudent({ payload }) {
-  const token = yield call(studentService.loginStudent, payload);
-  console.log(token);
+  yield call(studentService.loginStudent, payload);
+  // const config = {
+  // headers: {
+  // Authorization: 'Bearer ' + localStorage.setItem('token'),
+  // },
+  // };
+  // console.log(token);
 }
 
 export function* studentSignin() {
