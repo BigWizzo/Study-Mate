@@ -12,7 +12,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   student: studentReducer,
-  subject: subjectReducer,
+  subjects: subjectReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

@@ -5,6 +5,7 @@ import { loginStudentFailure, loginStudentSuccess } from './studentActions';
 
 function* loginStudent({ payload }) {
   try {
+    console.log('inside student');
     const studentDetails = yield call(apiService.loginStudent, payload);
     const { token, student, message } = studentDetails;
     yield localStorage.setItem('token', token);
