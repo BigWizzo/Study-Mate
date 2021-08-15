@@ -1,21 +1,21 @@
-import studentActionTypes from './studentActionTypes';
+import subjectActionTypes from './subjectActionTypes';
 
 const initialState = {
   loading: false,
 };
 
-const studentReducer = (state = initialState, action) => {
+const subjectReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case studentActionTypes.LOGIN_IN_SUCCESS:
+    case subjectActionTypes.SUBJECTS_FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
-        student: payload,
+        subject: payload,
       };
 
-    case studentActionTypes.LOGIN_IN_FAILURE:
+    case subjectActionTypes.SUBJECTS_FETCH_FAILURE:
       return {
         ...state,
         loading: false,
@@ -27,4 +27,4 @@ const studentReducer = (state = initialState, action) => {
   return state;
 };
 
-export default studentReducer;
+export default subjectReducer;
