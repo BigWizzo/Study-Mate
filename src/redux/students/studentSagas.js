@@ -5,7 +5,6 @@ import { loginStudentFailure, loginStudentSuccess } from './studentActions';
 
 function* loginStudent({ payload }) {
   try {
-    console.log('inside student');
     const studentDetails = yield call(apiService.loginStudent, payload);
     const { token, student, message } = studentDetails;
     yield localStorage.setItem('token', token);
@@ -13,12 +12,6 @@ function* loginStudent({ payload }) {
   } catch (error) {
     yield put(loginStudentFailure(error));
   }
-  // const config = {
-  // headers: {
-  // Authorization: 'Bearer ' + localStorage.setItem('token'),
-  // },
-  // };
-  // console.log(token);
 }
 
 export function* studentSignin() {

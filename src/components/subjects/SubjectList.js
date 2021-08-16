@@ -15,8 +15,6 @@ const SubjectList = (props) => {
     onLoadStudents();
   }, [subjects]);
 
-  console.log(subjects);
-
   return (
     <div>
       <h1>Subject</h1>
