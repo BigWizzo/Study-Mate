@@ -1,5 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import subjectActionTypes from './subjectActionTypes';
+import * as subjectActions from './subjectActions';
 import * as apiService from '../../config/apiService';
 
 function* loadSubjects() {
@@ -10,8 +11,8 @@ function* loadSubjects() {
       },
     };
     const subjects = yield call(apiService.getSubjects, config);
-    yield console.log(subjects);
-    // yield put(actions.tasksLoadedAction(tasks));
+    // yield console.log(subjects);
+    yield put(subjectActions.subjectFetchSuccess(subjects));
   } catch (e) {
     console.log(e);
   }

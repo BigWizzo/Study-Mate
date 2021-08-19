@@ -3,14 +3,13 @@ import { Button } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 
-const SubjectList = (props) => {
-  const { loadSubjects, subjects } = props;
-
+const SubjectList = ({ loadSubjects, subjects, student }) => {
   useEffect(() => {
     loadSubjects();
-  }, [subjects]);
+  }, []);
 
   console.log(subjects);
+  console.log(student);
 
   return (
     <div>
@@ -20,7 +19,10 @@ const SubjectList = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({ subjects: state.subjects });
+const mapStateToProps = (state) => ({
+  subjects: state.subjects,
+  student: state.student,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   loadSubjects: () => dispatch(subjectFetchRequest()),

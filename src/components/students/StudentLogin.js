@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import { loginStudentStart } from '../../redux/students/studentActions';
 import { connect } from 'react-redux';
 
-const StudentLogin = ({ logStudent, student }) => {
+const StudentLogin = ({ logStudent }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,10 +41,8 @@ const StudentLogin = ({ logStudent, student }) => {
   );
 };
 
-const mapStateToProps = (state) => ({ student: state.student });
-
 const mapDispatchToProps = (dispatch) => ({
   logStudent: (studentDetails) => dispatch(loginStudentStart(studentDetails)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentLogin);
+export default connect(null, mapDispatchToProps)(StudentLogin);
