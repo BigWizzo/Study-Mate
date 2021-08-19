@@ -10,6 +10,7 @@ function* loadSubjects() {
       },
     };
     const subjects = yield call(apiService.getSubjects, config);
+    yield console.log(subjects);
     // yield put(actions.tasksLoadedAction(tasks));
   } catch (e) {
     console.log(e);

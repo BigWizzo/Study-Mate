@@ -7,6 +7,7 @@ function* loginStudent({ payload }) {
   try {
     const studentDetails = yield call(apiService.loginStudent, payload);
     const { token, student, message } = studentDetails;
+    yield console.log(token);
     yield localStorage.setItem('token', token);
     yield put(loginStudentSuccess({ ...student, message }));
   } catch (error) {
