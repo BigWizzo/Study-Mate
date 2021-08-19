@@ -2,15 +2,11 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import subjectActionTypes from './subjectActionTypes';
 import * as subjectActions from './subjectActions';
 import * as apiService from '../../config/apiService';
+import { bearer } from '../../config/headers';
 
 function* loadSubjects() {
   try {
-    const config = {
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token'),
-      },
-    };
-    const subjects = yield call(apiService.getSubjects, config);
+    const subjects = yield call(apiService.getSubjects, bearer);
     // yield console.log(subjects);
     yield put(subjectActions.subjectFetchSuccess(subjects));
   } catch (e) {
