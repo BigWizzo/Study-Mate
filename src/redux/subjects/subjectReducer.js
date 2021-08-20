@@ -9,7 +9,6 @@ const subjectReducer = (state = initialState, action) => {
 
   switch (type) {
     case subjectActionTypes.SUBJECTS_FETCH_SUCCESS:
-      debugger;
       return {
         ...state,
         loading: false,
