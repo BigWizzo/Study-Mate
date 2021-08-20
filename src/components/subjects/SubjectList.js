@@ -1,27 +1,29 @@
 import React, { useEffect } from 'react';
-import { Button } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
+import SubjectListItem from './SubjectListItem';
 
 const SubjectList = ({ loadSubjects, subjects, student }) => {
   useEffect(() => {
     loadSubjects();
   }, []);
 
-  console.log(subjects);
-  console.log(student);
-
   return (
     <div>
       <h1>Subject</h1>
-      <Button>Submit</Button>
+      {subjects &&
+        subjects.map((subject) => (
+          <>
+            <SubjectListItem subject={subject} />
+          </>
+        ))}
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  subjects: state.subjects,
-  student: state.student,
+  subjects: state.subjects.subject,
+  student: state.student.student,
 });
 
 const mapDispatchToProps = (dispatch) => ({
