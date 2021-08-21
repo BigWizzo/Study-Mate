@@ -7,7 +7,6 @@ function* loginStudent({ payload }) {
   try {
     const studentDetails = yield call(apiService.loginStudent, payload);
     const { token, student, message } = studentDetails;
-    // yield console.log(token);
     yield localStorage.setItem('token', token);
     yield put(studentActions.loginStudentSuccess({ ...student, message }));
   } catch (error) {
@@ -16,12 +15,8 @@ function* loginStudent({ payload }) {
 }
 
 function* signupStudent({ payload }) {
-  debugger;
   try {
-    const studentDetails = yield call(apiService.createStudent, payload);
-    // const { token, student, message } = studentDetails;
-    yield console.log(studentDetails);
-    // yield put(studentActions.loginStudentSuccess({ ...student, message }));
+    yield call(apiService.createStudent, payload);
   } catch (error) {
     yield put(studentActions.loginStudentFailure(error));
   }
@@ -32,7 +27,6 @@ export function* watchStudentSignin() {
 }
 
 export function* watchStudentSignup() {
-  debugger;
   yield takeLatest(studentActionTypes.CREATE_STUDENT_START, signupStudent);
 }
 

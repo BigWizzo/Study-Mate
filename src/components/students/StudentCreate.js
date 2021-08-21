@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import { createStudentStart } from '../../redux/students/studentActions';
 import { connect } from 'react-redux';
 
-const StudentCreate = ({ createStudent }) => {
+const StudentCreate = ({ createStudent, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +19,7 @@ const StudentCreate = ({ createStudent }) => {
     }
     setUsername('');
     setPassword('');
+    history.push(`http://localhost:3000/login`);
   };
 
   return (

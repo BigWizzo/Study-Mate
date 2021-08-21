@@ -3,11 +3,9 @@ import clockingActionTypes from './clockingActionTypes';
 import * as clockingActions from './clockingActions';
 import * as apiService from '../../config/apiService';
 import { bearer } from '../../config/headers';
-import axios from 'axios';
 
 function* loadClockings(action) {
   const { id } = action.payload;
-  debugger;
   try {
     const clockings = yield call(apiService.getClockings, id, bearer);
     console.log(clockings);

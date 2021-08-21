@@ -8,6 +8,8 @@ const SubjectList = ({ loadSubjects, subjects, student }) => {
     loadSubjects();
   }, []);
 
+  console.log(subjects);
+
   return (
     <div>
       <h1>Subject</h1>
