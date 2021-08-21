@@ -8,7 +8,8 @@ const StudentCreate = ({ createStudent, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const signupStudent = () => {
+  const signupStudent = (e) => {
+    e.preventDefault();
     if (!username || !password) {
       alert('Please enter both username and password');
     } else {

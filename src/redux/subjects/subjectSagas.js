@@ -13,10 +13,31 @@ function* loadSubjects() {
   }
 }
 
+function* createSubject({ payload }) {
+  debugger;
+  try {
+    const subjectDetails = yield call(
+      apiService.createSubject,
+      payload,
+      bearer,
+    );
+    console.log(subjectDetails);
+    // const { token, student, message } = studentDetails;
+    // yield localStorage.setItem('token', token);
+    // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));
+  } catch (error) {
+    yield put(subjectActionTypes.loginStudentFailure(error));
+  }
+}
+
 export function* watchLoadSubjects() {
   yield takeLatest(subjectActionTypes.SUBJECTS_FETCH_REQUEST, loadSubjects);
 }
 
+export function* watchCreateSubject() {
+  yield takeLatest(subjectActionTypes.CREATE_SUBJECT_START, createSubject);
+}
+
 export function* subjectSagas() {
-  yield all([call(watchLoadSubjects)]);
+  yield all([call(watchLoadSubjects), call(watchCreateSubject)]);
 }

@@ -15,6 +15,12 @@ const NavBar = () => {
         <Link to="/signup" className="nav-link">
           Signup
         </Link>
+        <Link to="/subjects/new" className="nav-link">
+          Add Subject
+        </Link>
+        <Link to="/clockings/new" className="nav-link">
+          Add Clocking
+        </Link>
         <Link to="/login" className="nav-link">
           SignOut
         </Link>

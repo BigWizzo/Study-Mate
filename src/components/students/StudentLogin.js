@@ -8,7 +8,8 @@ const StudentLogin = ({ logStudent, student, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const signinStudent = () => {
+  const signinStudent = (e) => {
+    e.preventDefault();
     if (!username || !password) {
       alert('Please enter both username and password');
     } else {

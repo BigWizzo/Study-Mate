@@ -31,3 +31,7 @@
 .w-50 {
   width: 50%;
 }
+
+.subject-card {
+  cursor: pointers;
+}
