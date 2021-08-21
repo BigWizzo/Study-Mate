@@ -11,8 +11,6 @@ const ClockingsList = ({ loadClockings, clockings }) => {
     loadClockings(id);
   }, []);
 
-  console.log(clockings);
-
   return (
     <div>
       <h1>Clockings</h1>

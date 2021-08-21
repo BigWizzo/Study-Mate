@@ -1,3 +1,33 @@
 * {
   margin: 0;
 }
+
+.flex {
+  display: flex;
+}
+
+.nav-wrapper {
+  padding: 20px 50px;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+}
+
+.nav-link {
+  color: #f5913f;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  color: #adbac7;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}

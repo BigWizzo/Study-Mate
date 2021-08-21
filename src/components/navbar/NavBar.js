@@ -3,11 +3,22 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div>
-      <Link to="/">Subjects </Link>
-      <Link to="/login">Login </Link>
-      <Link to="/signup">Signup </Link>
-      <Link to="/login">SignOut </Link>
+    <div className="nav-wrapper flex">
+      <div className="logo">Math Magician</div>
+      <div className="nav flex">
+        <Link to="/" className="nav-link">
+          Subjects
+        </Link>
+        <Link to="/login" className="nav-link">
+          Login
+        </Link>
+        <Link to="/signup" className="nav-link">
+          Signup
+        </Link>
+        <Link to="/login" className="nav-link">
+          SignOut
+        </Link>
+      </div>
     </div>
   );
 };

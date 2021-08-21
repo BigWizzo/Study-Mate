@@ -8,10 +8,9 @@ function* loadClockings(action) {
   const { id } = action.payload;
   try {
     const clockings = yield call(apiService.getClockings, id, bearer);
-    console.log(clockings);
     yield put(clockingActions.clockingFetchSuccess(clockings));
   } catch (e) {
-    console.log(e);
+    yield e;
   }
 }
 

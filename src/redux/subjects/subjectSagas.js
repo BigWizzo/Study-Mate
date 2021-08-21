@@ -9,7 +9,7 @@ function* loadSubjects() {
     const subjects = yield call(apiService.getSubjects, bearer);
     yield put(subjectActions.subjectFetchSuccess(subjects));
   } catch (e) {
-    console.log(e);
+    yield e;
   }
 }
 
