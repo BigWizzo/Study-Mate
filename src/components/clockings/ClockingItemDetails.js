@@ -5,22 +5,21 @@ import { useParams } from 'react-router-dom';
 const ClockingItemDetails = ({ clockings }) => {
   const { id } = useParams();
 
-  console.log(clockings);
-  console.log(id);
-  debugger;
-  const clocking = clockings.filter((clocking) => clocking.id === id);
+  const clocking = clockings.filter((c) => c.id === parseInt(id));
 
-  console.log(clocking);
+  const { details, duration, topic } = clocking[0];
   return (
     <div>
       <h1>Clocking</h1>
-      <p>{clocking.topic}</p>
+      <p>{topic}</p>
+      <p>{duration}</p>
+      <p>{details}</p>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  clockings: state.clockings,
+  clockings: state.clockings.clocking,
 });
 
 export default connect(mapStateToProps)(ClockingItemDetails);
