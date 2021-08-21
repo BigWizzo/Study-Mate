@@ -6,6 +6,7 @@ import NavBar from './components/navbar/NavBar';
 import ClockingsList from './components/clockings/ClockingsList';
 import StudentCreate from './components/students/StudentCreate';
 import StudentLogout from './components/students/StudentLogout';
+import ClockingItemDetails from './components/clockings/ClockingItemDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" component={StudentCreate} />
         <Route path="/login" component={StudentLogout} />
         <Route path="/subjects/:id" component={ClockingsList} />
+        <Route path="/clockings/:id" component={ClockingItemDetails} />
         <Route component={Page404} />
       </Switch>
     </main>
