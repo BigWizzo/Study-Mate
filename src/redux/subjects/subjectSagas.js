@@ -6,6 +6,7 @@ import { bearer } from '../../config/headers';
 
 function* loadSubjects() {
   try {
+    // debugger;
     const subjects = yield call(apiService.getSubjects, bearer);
     // yield console.log(subjects);
     yield put(subjectActions.subjectFetchSuccess(subjects));

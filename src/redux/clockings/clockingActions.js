@@ -2,7 +2,7 @@ import clockingActionTypes from './clockingActionTypes';
 
 export const clockingFetchRequest = (id) => ({
   type: clockingActionTypes.CLOCKINGS_FETCH_REQUEST,
-  payload: id,
+  payload: { id },
 });
 
 export const clockingFetchSuccess = (clockingDetails) => ({

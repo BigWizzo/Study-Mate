@@ -15,10 +15,27 @@ function* loginStudent({ payload }) {
   }
 }
 
-export function* studentSignin() {
+function* signupStudent({ payload }) {
+  debugger;
+  try {
+    const studentDetails = yield call(apiService.createStudent, payload);
+    // const { token, student, message } = studentDetails;
+    yield console.log(studentDetails);
+    // yield put(studentActions.loginStudentSuccess({ ...student, message }));
+  } catch (error) {
+    yield put(studentActions.loginStudentFailure(error));
+  }
+}
+
+export function* watchStudentSignin() {
   yield takeLatest(studentActionTypes.LOGIN_IN_START, loginStudent);
 }
 
+export function* watchStudentSignup() {
+  debugger;
+  yield takeLatest(studentActionTypes.CREATE_STUDENT_START, signupStudent);
+}
+
 export function* studentSagas() {
-  yield all([call(studentSignin)]);
+  yield all([call(watchStudentSignin), call(watchStudentSignup)]);
 }

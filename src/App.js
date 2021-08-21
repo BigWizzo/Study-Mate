@@ -4,6 +4,7 @@ import StudentLogin from './components/students/StudentLogin';
 import Page404 from './components/Page404/Page404';
 import NavBar from './components/navbar/NavBar';
 import ClockingsList from './components/clockings/ClockingsList';
+import StudentCreate from './components/students/StudentCreate';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route path="/" component={SubjectList} exact />
         <Route path="/login" component={StudentLogin} />
+        <Route path="/signup" component={StudentCreate} />
         <Route path="/subjects/:id" component={ClockingsList} />
         <Route component={Page404} />
       </Switch>
