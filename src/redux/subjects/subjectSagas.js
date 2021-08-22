@@ -14,7 +14,6 @@ function* loadSubjects() {
 }
 
 function* createSubject({ payload }) {
-  debugger;
   try {
     const subjectDetails = yield call(
       apiService.createSubject,

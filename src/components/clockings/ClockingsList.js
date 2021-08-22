@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, withRouter } from 'react-router-dom';
 import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
 
-const ClockingsList = ({ loadClockings, clockings }) => {
+const ClockingsList = ({ loadClockings, clockings, history }) => {
   const { id } = useParams();
 
   useEffect(() => {
     loadClockings(id);
   }, []);
+
+  const addClocking = () => {
+    history.push('/clockings/new');
+  };
 
   return (
     <div>
@@ -20,6 +24,15 @@ const ClockingsList = ({ loadClockings, clockings }) => {
             <ClockingListItem clocking={clocking} />
           </>
         ))}
+      <button class="btn btn-primary" type="button" onClick={''}>
+        Delete Subject
+      </button>
+      <button class="btn btn-primary" type="button" onClick={''}>
+        Edit Subject
+      </button>
+      <button class="btn btn-primary" type="button" onClick={addClocking}>
+        Add Clocking
+      </button>
     </div>
   );
 };
@@ -33,4 +46,7 @@ const mapDispatchToProps = (dispatch) => ({
   loadClockings: (id) => dispatch(clockingFetchRequest(id)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClockingsList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(ClockingsList));

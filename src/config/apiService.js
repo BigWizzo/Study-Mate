@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { loginURL, subjectURL, studentURL } from './api';
+import { loginURL, subjectURL, studentURL, clockingURL } from './api';
 
 export const createStudent = (bearer) => {
   return axios
@@ -32,6 +32,13 @@ export const createSubject = (data, bearer) => {
 export const getClockings = (id, data) => {
   return axios
     .get(subjectURL + '/' + id, data)
+    .then((res) => res.data)
+    .catch((e) => e);
+};
+
+export const createClocking = (data, bearer) => {
+  return axios
+    .post(clockingURL, data, bearer)
     .then((res) => res.data)
     .catch((e) => e);
 };

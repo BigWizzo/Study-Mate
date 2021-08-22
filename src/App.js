@@ -8,6 +8,7 @@ import StudentCreate from './components/students/StudentCreate';
 import StudentLogout from './components/students/StudentLogout';
 import ClockingItemDetails from './components/clockings/ClockingItemDetails';
 import SubjectNew from './components/subjects/SubjectNew';
+import ClockingNew from './components/clockings/ClockingNew';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" component={StudentLogout} />
           <Route path="/subjects/new" component={SubjectNew} />
           <Route path="/subjects/:id" component={ClockingsList} />
+          <Route path="/clockings/new" component={ClockingNew} />
           <Route path="/clockings/:id" component={ClockingItemDetails} />
           <Route component={Page404} />
         </Switch>

@@ -14,10 +14,31 @@ function* loadClockings(action) {
   }
 }
 
+function* createClocking({ payload }) {
+  debugger;
+  try {
+    const clockingDetails = yield call(
+      apiService.createClocking,
+      payload,
+      bearer,
+    );
+    console.log(clockingDetails);
+    // const { token, student, message } = studentDetails;
+    // yield localStorage.setItem('token', token);
+    // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));
+  } catch (error) {
+    // yield put(clockingActions.loginStudentFailure(error));
+  }
+}
+
 export function* watchLoadClockings() {
   yield takeLatest(clockingActionTypes.CLOCKINGS_FETCH_REQUEST, loadClockings);
 }
 
+export function* watchCreateClocking() {
+  yield takeLatest(clockingActionTypes.CREATE_CLOCKING_START, createClocking);
+}
+
 export function* clockingSagas() {
-  yield all([call(watchLoadClockings)]);
+  yield all([call(watchLoadClockings), call(watchCreateClocking)]);
 }
