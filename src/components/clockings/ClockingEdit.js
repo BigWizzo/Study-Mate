@@ -3,33 +3,38 @@ import { createClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const ClockingNew = ({ createClocking, history, student, subjects }) => {
+const ClockingEdit = ({
+  createClocking,
+  history,
+  student,
+  subjects,
+  clockings,
+}) => {
   const { id } = useParams();
-  const [topic, setTopic] = useState('');
-  const [details, setDetails] = useState('');
-  const [duration, setDuration] = useState('');
-  const [selectSubject, setSelectSubject] = useState('');
+  console.log(clockings);
+  const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
+  console.log(filteredClocking);
+  const [topic, setTopic] = useState(filteredClocking.topic);
+  const [details, setDetails] = useState(filteredClocking.details);
+  const [duration, setDuration] = useState(filteredClocking.duration);
 
   const addClocking = (e) => {
+    debugger;
     e.preventDefault();
     if (!topic || !details) {
       alert('Please enter both topic and details');
     } else {
       createClocking({
+        ...filteredClocking,
         topic,
         details,
         duration,
-        subject_id: selectSubject,
-        student_id: student.id.toString(),
       });
     }
     setTopic('');
     setDetails('');
     history.goBack();
   };
-
-  // const subject = subjects.filter((c) => c.id === parseInt(id));
-  // console.log(subject);
 
   return (
     <div>
@@ -62,21 +67,6 @@ const ClockingNew = ({ createClocking, history, student, subjects }) => {
             onChange={(e) => setDuration(e.target.value)}
           />
         </div>
-        <div className="mb-3">
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            value={selectSubject}
-            onChange={(e) => setSelectSubject(e.target.value)}
-          >
-            <option selected>Open this select menu</option>
-            {subjects.map((subject) => (
-              <option value={subject.id ?? ''} key={subject.id}>
-                {subject.title}
-              </option>
-            ))}
-          </select>
-        </div>
         <button type="submit" className="btn btn-primary" onClick={addClocking}>
           Create Clocking
         </button>
@@ -88,6 +78,7 @@ const ClockingNew = ({ createClocking, history, student, subjects }) => {
 const mapStateToProps = (state) => ({
   student: state.student.student,
   subjects: state.subjects.subject,
+  clockings: state.clockings.clocking,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -95,4 +86,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createClockingStart(clockingDetails)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClockingNew);
+export default connect(mapStateToProps, mapDispatchToProps)(ClockingEdit);

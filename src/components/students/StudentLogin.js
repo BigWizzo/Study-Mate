@@ -20,6 +20,8 @@ const StudentLogin = ({ logStudent, student, history }) => {
     }
     setUsername('');
     setPassword('');
+    debugger;
+    history.push('/');
   };
 
   return (

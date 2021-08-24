@@ -9,6 +9,7 @@ import StudentLogout from './components/students/StudentLogout';
 import ClockingItemDetails from './components/clockings/ClockingItemDetails';
 import SubjectNew from './components/subjects/SubjectNew';
 import ClockingNew from './components/clockings/ClockingNew';
+import ClockingEdit from './components/clockings/ClockingEdit';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route path="/subjects/new" component={SubjectNew} />
           <Route path="/subjects/:id" component={ClockingsList} />
           <Route path="/clockings/new" component={ClockingNew} />
-          <Route path="/clockings/:id" component={ClockingItemDetails} />
+          <Route path="/clockings/:id" component={ClockingItemDetails} exact />
+          <Route path="/clockings/:id/edit" component={ClockingEdit} exact />
           <Route component={Page404} />
         </Switch>
       </div>

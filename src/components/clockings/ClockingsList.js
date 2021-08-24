@@ -15,6 +15,10 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     history.push('/clockings/new');
   };
 
+  const editClocking = () => {
+    history.push(`/subjects/${id}/edit`);
+  };
+
   return (
     <div>
       <h1>Clockings</h1>
@@ -24,12 +28,6 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
             <ClockingListItem clocking={clocking} />
           </>
         ))}
-      <button class="btn btn-primary" type="button" onClick={''}>
-        Delete Subject
-      </button>
-      <button class="btn btn-primary" type="button" onClick={''}>
-        Edit Subject
-      </button>
       <button class="btn btn-primary" type="button" onClick={addClocking}>
         Add Clocking
       </button>

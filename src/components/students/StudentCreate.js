@@ -20,7 +20,7 @@ const StudentCreate = ({ createStudent, history }) => {
     }
     setUsername('');
     setPassword('');
-    history.push(`http://localhost:3000/login`);
+    history.push(`/login`);
   };
 
   return (
