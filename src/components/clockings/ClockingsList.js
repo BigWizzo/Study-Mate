@@ -15,10 +15,6 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     history.push('/clockings/new');
   };
 
-  const editClocking = () => {
-    history.push(`/subjects/${id}/edit`);
-  };
-
   return (
     <div>
       <h1>Clockings</h1>

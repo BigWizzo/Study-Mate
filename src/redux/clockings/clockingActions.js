@@ -29,3 +29,18 @@ export const createClockingFailure = (error) => ({
   type: clockingActionTypes.CREATE_CLOCKING_FAILURE,
   payload: error,
 });
+
+export const deleteClockingStart = (clockingId) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_START,
+  payload: clockingId,
+});
+
+export const deleteClockingSuccess = (clockingId) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_SUCCESS,
+  payload: clockingId,
+});
+
+export const deleteClockingFailure = (error) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_FAILURE,
+  payload: error,
+});

@@ -15,7 +15,6 @@ function* loadClockings(action) {
 }
 
 function* createClocking({ payload }) {
-  debugger;
   try {
     const clockingDetails = yield call(
       apiService.createClocking,
@@ -23,6 +22,19 @@ function* createClocking({ payload }) {
       bearer,
     );
     console.log(clockingDetails);
+    // const { token, student, message } = studentDetails;
+    // yield localStorage.setItem('token', token);
+    // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));
+  } catch (error) {
+    // yield put(clockingActions.loginStudentFailure(error));
+  }
+}
+
+function* deleteClocking({ payload }) {
+  debugger;
+  try {
+    yield call(apiService.deleteClocking, payload, bearer);
+    // console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
     // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));
@@ -39,6 +51,14 @@ export function* watchCreateClocking() {
   yield takeLatest(clockingActionTypes.CREATE_CLOCKING_START, createClocking);
 }
 
+export function* watchDeleteClocking() {
+  yield takeLatest(clockingActionTypes.DELETE_CLOCKING_START, deleteClocking);
+}
+
 export function* clockingSagas() {
-  yield all([call(watchLoadClockings), call(watchCreateClocking)]);
+  yield all([
+    call(watchLoadClockings),
+    call(watchCreateClocking),
+    call(watchDeleteClocking),
+  ]);
 }
