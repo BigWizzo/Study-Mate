@@ -12,7 +12,15 @@ const clockingReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        clocking: payload,
+        clockings: payload,
+      };
+
+    case clockingActionTypes.CREATE_CLOCKING_SUCCESS:
+      debugger;
+      return {
+        ...state,
+        loading: false,
+        clockings: { ...state.clockings, payload },
       };
 
     case clockingActionTypes.CLOCKINGS_FETCH_FAILURE:

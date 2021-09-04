@@ -15,15 +15,19 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     history.push('/clockings/new');
   };
 
+  debugger;
   return (
     <div>
-      <h1>Clockings</h1>
-      {clockings &&
+      {/* <h1>Clockings</h1> */}
+      {clockings ? (
         clockings.map((clocking) => (
           <>
             <ClockingListItem clocking={clocking} />
           </>
-        ))}
+        ))
+      ) : (
+        <div>Still Loading</div>
+      )}
       <button class="btn btn-primary" type="button" onClick={addClocking}>
         Add Clocking
       </button>
@@ -32,7 +36,7 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
 };
 
 const mapStateToProps = (state) => ({
-  clockings: state.clockings.clocking,
+  clockings: state.clockings.clockings,
   student: state.student.student,
 });
 
