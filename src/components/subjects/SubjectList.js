@@ -28,7 +28,7 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
         ) : (
           <div>Nothing to show yet</div>
         )}
-        <button class="btn btn-primary" type="button" onClick={addSubject}>
+        <button className="btn btn-primary" type="button" onClick={addSubject}>
           Add Subject
         </button>
       </div>

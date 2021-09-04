@@ -44,3 +44,18 @@ export const deleteClockingFailure = (error) => ({
   type: clockingActionTypes.DELETE_CLOCKING_FAILURE,
   payload: error,
 });
+
+export const editClockingStart = (clocking) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_START,
+  payload: clocking,
+});
+
+export const editClockingSuccess = (clocking) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_SUCCESS,
+  payload: clocking,
+});
+
+export const editClockingFailure = (error) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_FAILURE,
+  payload: error,
+});

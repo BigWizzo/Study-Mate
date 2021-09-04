@@ -43,6 +43,13 @@ export const createClocking = (data, bearer) => {
     .catch((e) => e);
 };
 
+export const editClocking = (id, data, bearer) => {
+  return axios
+    .put(clockingURL + '/' + id, data, bearer)
+    .then((res) => res.data)
+    .catch((e) => e);
+};
+
 export const deleteClocking = (id, bearer) => {
   return axios
     .delete(clockingURL + '/' + id, bearer)

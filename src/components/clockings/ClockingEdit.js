@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createClockingStart } from '../../redux/clockings/clockingActions';
+import { editClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ const ClockingEdit = ({
   student,
   subjects,
   clockings,
+  editClocking,
 }) => {
   const { id } = useParams();
   console.log(clockings);
@@ -18,13 +19,13 @@ const ClockingEdit = ({
   const [details, setDetails] = useState(filteredClocking.details);
   const [duration, setDuration] = useState(filteredClocking.duration);
 
-  const addClocking = (e) => {
+  const editCurrentClocking = (e) => {
     debugger;
     e.preventDefault();
     if (!topic || !details) {
       alert('Please enter both topic and details');
     } else {
-      createClocking({
+      editClocking({
         ...filteredClocking,
         topic,
         details,
@@ -67,8 +68,12 @@ const ClockingEdit = ({
             onChange={(e) => setDuration(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary" onClick={addClocking}>
-          Create Clocking
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={editCurrentClocking}
+        >
+          Update Clocking
         </button>
       </form>
     </div>
@@ -82,8 +87,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createClocking: (clockingDetails) =>
-    dispatch(createClockingStart(clockingDetails)),
+  editClocking: (clockingDetails) =>
+    dispatch(editClockingStart(clockingDetails)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClockingEdit);
