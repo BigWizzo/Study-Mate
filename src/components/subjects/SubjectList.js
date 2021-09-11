@@ -5,8 +5,13 @@ import SubjectListItem from './SubjectListItem';
 
 const SubjectList = ({ loadSubjects, subjects, history, student }) => {
   useEffect(() => {
-    loadSubjects();
-  }, [student?.id]);
+    if (student) {
+      loadSubjects();
+      debugger;
+    } else {
+      history.push('./subjects');
+    }
+  }, [student]);
 
   const addSubject = () => {
     history.push('./subjects/new');
@@ -14,6 +19,7 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
 
   console.log(student);
   console.log(subjects);
+  console.log(student);
 
   return (
     <div>
