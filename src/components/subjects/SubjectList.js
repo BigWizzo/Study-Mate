@@ -5,22 +5,17 @@ import SubjectListItem from './SubjectListItem';
 
 const SubjectList = ({ loadSubjects, subjects, history, student }) => {
   useEffect(() => {
-    if (student) {
-      loadSubjects();
-      debugger;
+    if (!student) {
+      history.push('./login');
     } else {
-      history.push('./subjects');
+      loadSubjects();
     }
-  }, [student]);
+  }, []);
 
   const addSubject = () => {
     history.push('./subjects/new');
   };
-
-  console.log(student);
   console.log(subjects);
-  console.log(student);
-
   return (
     <div>
       <h1>Subject</h1>
@@ -34,9 +29,6 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
         ) : (
           <div>Nothing to show yet</div>
         )}
-        <button className="btn btn-primary" type="button" onClick={addSubject}>
-          Add Subject
-        </button>
       </div>
     </div>
   );

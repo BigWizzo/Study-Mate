@@ -10,11 +10,11 @@ import ClockingItemDetails from './components/clockings/ClockingItemDetails';
 import SubjectNew from './components/subjects/SubjectNew';
 import ClockingNew from './components/clockings/ClockingNew';
 import ClockingEdit from './components/clockings/ClockingEdit';
+import BottomNav from './components/navbar/BottomNav';
 
 function App() {
   return (
     <div>
-      <NavBar />
       <div className="container-fluid">
         <Switch>
           <Route path="/" component={SubjectList} exact />
@@ -29,6 +29,7 @@ function App() {
           <Route component={Page404} />
         </Switch>
       </div>
+      <BottomNav />
     </div>
   );
 }

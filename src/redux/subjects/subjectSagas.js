@@ -1,15 +1,15 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest, takeEvery } from 'redux-saga/effects';
 import subjectActionTypes from './subjectActionTypes';
 import * as subjectActions from './subjectActions';
 import * as apiService from '../../config/apiService';
 import { bearer } from '../../config/headers';
 
-function* loadSubjects() {
+function* loadSubjectsList() {
   try {
     const subjects = yield call(apiService.getSubjects, bearer);
     yield put(subjectActions.subjectFetchSuccess(subjects));
-  } catch (e) {
-    yield e;
+  } catch (error) {
+    yield console.log(error);
   }
 }
 
@@ -18,7 +18,7 @@ function* createSubject({ payload }) {
     const subjectDetails = yield call(
       apiService.createSubject,
       payload,
-      bearer,
+      bearer
     );
     console.log(subjectDetails);
     // const { token, student, message } = studentDetails;
@@ -30,7 +30,7 @@ function* createSubject({ payload }) {
 }
 
 export function* watchLoadSubjects() {
-  yield takeLatest(subjectActionTypes.SUBJECTS_FETCH_REQUEST, loadSubjects);
+  yield takeEvery(subjectActionTypes.SUBJECTS_FETCH_REQUEST, loadSubjectsList);
 }
 
 export function* watchCreateSubject() {

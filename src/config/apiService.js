@@ -15,9 +15,9 @@ export const loginStudent = (data) => {
     .catch((e) => e);
 };
 
-export const getSubjects = (data) => {
+export const getSubjects = (bearer) => {
   return axios
-    .get(subjectURL, data)
+    .get(subjectURL, bearer)
     .then((res) => res.data)
     .catch((e) => e);
 };

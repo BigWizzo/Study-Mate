@@ -8,6 +8,10 @@ const StudentLogin = ({ logStudent, student, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  if (student) {
+    history.push('/');
+  }
+
   const signinStudent = (e) => {
     e.preventDefault();
     if (!username || !password) {
@@ -20,8 +24,6 @@ const StudentLogin = ({ logStudent, student, history }) => {
     }
     setUsername('');
     setPassword('');
-    debugger;
-    history.push('/');
   };
 
   return (

@@ -15,12 +15,11 @@ function* loadClockings({ payload }) {
 }
 
 function* createClocking({ payload }) {
-  debugger;
   try {
     const clockingDetails = yield call(
       apiService.createClocking,
       payload,
-      bearer,
+      bearer
     );
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
@@ -32,12 +31,11 @@ function* createClocking({ payload }) {
 }
 
 function* deleteClocking({ payload }) {
-  debugger;
   try {
     const clockingDetails = yield call(
       apiService.deleteClocking,
       payload,
-      bearer,
+      bearer
     );
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
@@ -50,13 +48,12 @@ function* deleteClocking({ payload }) {
 
 function* editClocking({ payload }) {
   const { id } = payload;
-  debugger;
   try {
     const clockingDetails = yield call(
       apiService.editClocking,
       id,
       payload,
-      bearer,
+      bearer
     );
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;

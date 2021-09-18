@@ -15,7 +15,6 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     history.push('/clockings/new');
   };
 
-  debugger;
   return (
     <div>
       {/* <h1>Clockings</h1> */}
@@ -46,5 +45,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(withRouter(ClockingsList));

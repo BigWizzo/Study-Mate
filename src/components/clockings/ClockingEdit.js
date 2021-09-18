@@ -20,7 +20,6 @@ const ClockingEdit = ({
   const [duration, setDuration] = useState(filteredClocking.duration);
 
   const editCurrentClocking = (e) => {
-    debugger;
     e.preventDefault();
     if (!topic || !details) {
       alert('Please enter both topic and details');

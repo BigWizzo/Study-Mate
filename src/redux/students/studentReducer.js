@@ -2,6 +2,7 @@ import studentActionTypes from './studentActionTypes';
 
 const initialState = {
   loading: false,
+  error: null,
 };
 
 const studentReducer = (state = initialState, action) => {
@@ -13,12 +14,14 @@ const studentReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         student: payload,
+        error: null,
       };
 
     case studentActionTypes.LOGIN_IN_FAILURE:
       return {
         ...state,
         loading: false,
+        error: payload,
       };
 
     default:
