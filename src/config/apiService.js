@@ -1,9 +1,18 @@
 import axios from 'axios';
 import { loginURL, subjectURL, studentURL, clockingURL } from './api';
 
-export const createStudent = (bearer) => {
+const bearer = () => ({
+  headers: {
+    Authorization: 'Bearer ' + localStorage.getItem('token'),
+  },
+});
+
+debugger;
+console.log(bearer());
+
+export const createStudent = () => {
   return axios
-    .post(studentURL, bearer)
+    .post(studentURL, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
@@ -15,44 +24,48 @@ export const loginStudent = (data) => {
     .catch((e) => e);
 };
 
-export const getSubjects = (bearer) => {
+export const getSubjects = () => {
+  debugger;
+  console.log(subjectURL, bearer());
   return axios
-    .get(subjectURL, bearer)
+    .get(subjectURL, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
 
-export const createSubject = (data, bearer) => {
+export const createSubject = (data) => {
   return axios
-    .post(subjectURL, data, bearer)
+    .post(subjectURL, data, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
 
-export const getClockings = (id, data) => {
+export const getClockings = (id) => {
+  debugger;
+  console.log(subjectURL, bearer());
   return axios
-    .get(subjectURL + '/' + id, data)
+    .get(subjectURL + '/' + id, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
 
-export const createClocking = (data, bearer) => {
+export const createClocking = (data) => {
   return axios
-    .post(clockingURL, data, bearer)
+    .post(clockingURL, data, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
 
-export const editClocking = (id, data, bearer) => {
+export const editClocking = (id, data) => {
   return axios
-    .put(clockingURL + '/' + id, data, bearer)
+    .put(clockingURL + '/' + id, data, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };
 
-export const deleteClocking = (id, bearer) => {
+export const deleteClocking = (id) => {
   return axios
-    .delete(clockingURL + '/' + id, bearer)
+    .delete(clockingURL + '/' + id, bearer())
     .then((res) => res.data)
     .catch((e) => e);
 };

@@ -2,12 +2,12 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import clockingActionTypes from './clockingActionTypes';
 import * as clockingActions from './clockingActions';
 import * as apiService from '../../config/apiService';
-import { bearer } from '../../config/headers';
+// import { bearer } from '../../config/headers';
 
 function* loadClockings({ payload }) {
   const { id } = payload;
   try {
-    const clockings = yield call(apiService.getClockings, id, bearer);
+    const clockings = yield call(apiService.getClockings, id);
     yield put(clockingActions.clockingFetchSuccess(clockings));
   } catch (e) {
     yield e;
@@ -16,11 +16,7 @@ function* loadClockings({ payload }) {
 
 function* createClocking({ payload }) {
   try {
-    const clockingDetails = yield call(
-      apiService.createClocking,
-      payload,
-      bearer
-    );
+    const clockingDetails = yield call(apiService.createClocking, payload);
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
@@ -32,11 +28,7 @@ function* createClocking({ payload }) {
 
 function* deleteClocking({ payload }) {
   try {
-    const clockingDetails = yield call(
-      apiService.deleteClocking,
-      payload,
-      bearer
-    );
+    const clockingDetails = yield call(apiService.deleteClocking, payload);
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
@@ -49,12 +41,7 @@ function* deleteClocking({ payload }) {
 function* editClocking({ payload }) {
   const { id } = payload;
   try {
-    const clockingDetails = yield call(
-      apiService.editClocking,
-      id,
-      payload,
-      bearer
-    );
+    const clockingDetails = yield call(apiService.editClocking, id, payload);
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
