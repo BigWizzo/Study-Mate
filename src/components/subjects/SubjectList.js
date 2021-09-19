@@ -10,7 +10,6 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
     if (!student) {
       history.push('./login');
     } else {
-      debugger;
       loadSubjects();
     }
   }, []);

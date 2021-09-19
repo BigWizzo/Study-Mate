@@ -7,9 +7,6 @@ const bearer = () => ({
   },
 });
 
-debugger;
-console.log(bearer());
-
 export const createStudent = () => {
   return axios
     .post(studentURL, bearer())
@@ -25,7 +22,6 @@ export const loginStudent = (data) => {
 };
 
 export const getSubjects = () => {
-  debugger;
   console.log(subjectURL, bearer());
   return axios
     .get(subjectURL, bearer())
@@ -41,8 +37,6 @@ export const createSubject = (data) => {
 };
 
 export const getClockings = (id) => {
-  debugger;
-  console.log(subjectURL, bearer());
   return axios
     .get(subjectURL + '/' + id, bearer())
     .then((res) => res.data)

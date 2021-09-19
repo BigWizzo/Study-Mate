@@ -2,6 +2,7 @@ import subjectActionTypes from './subjectActionTypes';
 
 const initialState = {
   loading: false,
+  subject: [],
 };
 
 const subjectReducer = (state = initialState, action) => {

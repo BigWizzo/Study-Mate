@@ -20,7 +20,7 @@ function* createClocking({ payload }) {
     console.log(clockingDetails);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
-    yield put(clockingActions.clockingFetchSuccess(clockingDetails));
+    yield put(clockingActions.createClockingSuccess(clockingDetails));
   } catch (error) {
     // yield put(clockingActions.loginStudentFailure(error));
   }

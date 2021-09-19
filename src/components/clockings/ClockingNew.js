@@ -3,7 +3,13 @@ import { createClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const ClockingNew = ({ createClocking, history, student, subjects }) => {
+const ClockingNew = ({
+  createClocking,
+  history,
+  student,
+  subjects,
+  clockings,
+}) => {
   const { id } = useParams();
   const [topic, setTopic] = useState('');
   const [details, setDetails] = useState('');
@@ -25,15 +31,19 @@ const ClockingNew = ({ createClocking, history, student, subjects }) => {
     }
     setTopic('');
     setDetails('');
-    history.goBack();
+    // history.goBack();
   };
 
-  // const subject = subjects.filter((c) => c.id === parseInt(id));
-  // console.log(subject);
+  console.log(subjects);
+  console.log(student);
 
+  // const subject = subjects.filter((c) => c.id === parseInt(id));
+  console.log(clockings);
+
+  // if (clockings)
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>New Clocking</h1>
       <form>
         <div className="mb-3">
           <label className="form-label">Topic</label>
@@ -88,6 +98,7 @@ const ClockingNew = ({ createClocking, history, student, subjects }) => {
 const mapStateToProps = (state) => ({
   student: state.student.student,
   subjects: state.subjects.subject,
+  clockings: state.clockings.clockings,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -22,8 +22,6 @@ const SubjectNew = ({ createSubject, history, student }) => {
     history.push(`/`);
   };
 
-  console.log(student);
-
   return (
     <div>
       <h1>Sign Up</h1>

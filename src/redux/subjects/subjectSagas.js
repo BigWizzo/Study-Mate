@@ -7,7 +7,6 @@ import * as apiService from '../../config/apiService';
 function* loadSubjectsList() {
   try {
     const subjects = yield call(apiService.getSubjects);
-    debugger;
     console.log(subjects);
     yield put(subjectActions.subjectFetchSuccess(subjects));
   } catch (error) {
