@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
+import { dateToday } from '../../utils/utils';
 import Appheader from '../header/Appheader';
 import BottomNav from '../navbar/BottomNav';
 import SubjectListItem from './SubjectListItem';
@@ -25,7 +26,9 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
           <span className="col-2 text-center">
             <i className="fas fa-angle-left"></i>
           </span>
-          <span className="col-8 text-center">Date here</span>
+          <span className="col-8 text-center">
+            {dateToday(new Date().toString())}
+          </span>
           <span className="col-2 text-center">
             <i className="fas fa-angle-right"></i>
           </span>

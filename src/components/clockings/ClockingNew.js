@@ -79,7 +79,7 @@ const ClockingNew = ({
               value={selectSubject}
               onChange={(e) => setSelectSubject(e.target.value)}
             >
-              <option selected>Open this select menu</option>
+              <option selected>Select Subject</option>
               {subjects.map((subject) => (
                 <option value={subject.id ?? ''} key={subject.id}>
                   {subject.title}
