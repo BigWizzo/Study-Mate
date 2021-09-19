@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 
 function App({ student }) {
   return (
-    <div className="">
+    <>
       <Appheader />
       <div className="container-fluid">
         <Switch>
@@ -32,7 +32,7 @@ function App({ student }) {
         </Switch>
       </div>
       {student && <BottomNav />}
-    </div>
+    </>
   );
 }
 

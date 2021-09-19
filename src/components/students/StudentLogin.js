@@ -6,9 +6,10 @@ const StudentLogin = ({ logStudent, student, history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  if (student) {
+  if (student?.message === 'Logged in successfully') {
     history.push('/');
   }
+  console.log(student?.message);
 
   const signinStudent = (e) => {
     e.preventDefault();
@@ -27,6 +28,9 @@ const StudentLogin = ({ logStudent, student, history }) => {
   return (
     <div>
       <h1>Login</h1>
+      {student?.message === 'Request failed with status code 401' && (
+        <p className="text-danger">Wrong Log in details</p>
+      )}
       <form>
         <div className="mb-3">
           <label className="form-label">User Name</label>
