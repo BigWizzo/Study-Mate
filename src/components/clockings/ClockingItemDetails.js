@@ -6,8 +6,6 @@ import { useParams, withRouter } from 'react-router-dom';
 const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
   const { id } = useParams();
 
-  console.log(clockings);
-
   const clocking = clockings.filter((c) => c.id === parseInt(id));
 
   const editClocking = () => {

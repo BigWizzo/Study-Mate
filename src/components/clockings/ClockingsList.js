@@ -11,21 +11,15 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     loadClockings(id);
   }, []);
 
-  const addClocking = () => {
-    history.push('/clockings/new');
-  };
-
   return (
     <div>
       {clockings &&
         clockings.map((clocking) => (
-          <ClockingListItem key={clocking.id} clocking={clocking}>
-            {clocking}
-          </ClockingListItem>
+          <ClockingListItem key={clocking.id} clocking={clocking} />
         ))}
-      <button className="btn btn-primary" type="button" onClick={addClocking}>
-        Add Clocking
-      </button>
+      {!clockings < 1 && (
+        <h3 className="text-center my-4">No Clockings to show</h3>
+      )}
     </div>
   );
 };

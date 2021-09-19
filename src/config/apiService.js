@@ -22,7 +22,6 @@ export const loginStudent = (data) => {
 };
 
 export const getSubjects = () => {
-  console.log(subjectURL, bearer());
   return axios
     .get(subjectURL, bearer())
     .then((res) => res.data)

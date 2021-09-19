@@ -2,26 +2,19 @@ import { all, call, put, takeLatest, takeEvery } from 'redux-saga/effects';
 import subjectActionTypes from './subjectActionTypes';
 import * as subjectActions from './subjectActions';
 import * as apiService from '../../config/apiService';
-// import { bearer } from '../../config/headers';
 
 function* loadSubjectsList() {
   try {
     const subjects = yield call(apiService.getSubjects);
-    console.log(subjects);
     yield put(subjectActions.subjectFetchSuccess(subjects));
   } catch (error) {
-    yield console.log(error);
+    yield put(subjectActions.subjectFetchFailure(error));
   }
 }
 
 function* createSubject({ payload }) {
   try {
-    const subjectDetails = yield call(
-      apiService.createSubject,
-      payload
-      // bearer
-    );
-    console.log(subjectDetails);
+    const subjectDetails = yield call(apiService.createSubject, payload);
     // const { token, student, message } = studentDetails;
     // yield localStorage.setItem('token', token);
     // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));

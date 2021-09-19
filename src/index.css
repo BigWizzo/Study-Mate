@@ -58,3 +58,20 @@
   bottom: 0;
   width: 100%;
 }
+
+.bottom-link {
+  background: rgb(26, 32, 43);
+}
+
+.color-blue {
+  color: #49b5e8;
+}
+
+.bg-blue,
+.bottom-link:hover {
+  background: #49b5e8;
+}
+
+.bottom-link:active {
+  background: #49b5e8;
+}

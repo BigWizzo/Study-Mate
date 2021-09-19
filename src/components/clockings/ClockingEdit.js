@@ -12,9 +12,7 @@ const ClockingEdit = ({
   editClocking,
 }) => {
   const { id } = useParams();
-  console.log(clockings);
   const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
-  console.log(filteredClocking);
   const [topic, setTopic] = useState(filteredClocking.topic);
   const [details, setDetails] = useState(filteredClocking.details);
   const [duration, setDuration] = useState(filteredClocking.duration);

@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 import { dateToday } from '../../utils/utils';
-import Appheader from '../header/Appheader';
-import BottomNav from '../navbar/BottomNav';
 import SubjectListItem from './SubjectListItem';
 
 const SubjectList = ({ loadSubjects, subjects, history, student }) => {
@@ -15,10 +13,6 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
     }
   }, []);
 
-  const addSubject = () => {
-    history.push('./subjects/new');
-  };
-  console.log(subjects);
   return (
     <>
       <div className="container-fliuid">

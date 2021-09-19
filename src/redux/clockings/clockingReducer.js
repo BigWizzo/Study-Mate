@@ -23,7 +23,6 @@ const clockingReducer = (state = initialState, action) => {
       };
 
     case clockingActionTypes.CREATE_CLOCKING_SUCCESS:
-      debugger;
       return {
         ...state,
         loading: false,
