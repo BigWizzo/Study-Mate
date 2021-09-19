@@ -37,7 +37,7 @@ const ClockingEdit = ({
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Edit Clocking</h1>
       <form>
         <div className="mb-3">
           <label className="form-label">Topic</label>
@@ -81,7 +81,7 @@ const ClockingEdit = ({
 const mapStateToProps = (state) => ({
   student: state.student.student,
   subjects: state.subjects.subject,
-  clockings: state.clockings.clocking,
+  clockings: state.clockings.clockings,
 });
 
 const mapDispatchToProps = (dispatch) => ({

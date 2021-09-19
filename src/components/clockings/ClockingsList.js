@@ -4,7 +4,7 @@ import { useParams, withRouter } from 'react-router-dom';
 import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
 
-const ClockingsList = ({ loadClockings, clockings, history }) => {
+const ClockingsList = ({ loadClockings, clockings }) => {
   const { id } = useParams();
 
   useEffect(() => {

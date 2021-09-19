@@ -23,11 +23,26 @@ const clockingReducer = (state = initialState, action) => {
       };
 
     case clockingActionTypes.CREATE_CLOCKING_SUCCESS:
-      debugger;
       return {
         ...state,
         loading: false,
         message: 'success',
+        clockings: [...clockings, payload],
+      };
+
+    case clockingActionTypes.EDIT_CLOCKING_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: 'edited',
+        clockings: [...clockings, payload],
+      };
+
+    case clockingActionTypes.DELETE_CLOCKING_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: 'deleted',
         clockings: [...clockings, payload],
       };
 
