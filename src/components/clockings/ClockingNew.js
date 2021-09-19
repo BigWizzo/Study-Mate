@@ -40,59 +40,63 @@ const ClockingNew = ({
   // const subject = subjects.filter((c) => c.id === parseInt(id));
   console.log(clockings);
 
-  // if (clockings)
-  return (
-    <div>
-      <h1>New Clocking</h1>
-      <form>
-        <div className="mb-3">
-          <label className="form-label">Topic</label>
-          <input
-            type="text"
-            className="form-control"
-            value={topic ?? ''}
-            onChange={(e) => setTopic(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Details</label>
-          <input
-            type="text"
-            className="form-control"
-            value={details ?? ''}
-            onChange={(e) => setDetails(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Duration</label>
-          <input
-            type="text"
-            className="form-control"
-            value={duration ?? ''}
-            onChange={(e) => setDuration(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            value={selectSubject}
-            onChange={(e) => setSelectSubject(e.target.value)}
+  if (clockings)
+    return (
+      <div>
+        <h1>New Clocking</h1>
+        <form>
+          <div className="mb-3">
+            <label className="form-label">Topic</label>
+            <input
+              type="text"
+              className="form-control"
+              value={topic ?? ''}
+              onChange={(e) => setTopic(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Details</label>
+            <input
+              type="text"
+              className="form-control"
+              value={details ?? ''}
+              onChange={(e) => setDetails(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Duration</label>
+            <input
+              type="text"
+              className="form-control"
+              value={duration ?? ''}
+              onChange={(e) => setDuration(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              value={selectSubject}
+              onChange={(e) => setSelectSubject(e.target.value)}
+            >
+              <option selected>Open this select menu</option>
+              {subjects.map((subject) => (
+                <option value={subject.id ?? ''} key={subject.id}>
+                  {subject.title}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={addClocking}
           >
-            <option selected>Open this select menu</option>
-            {subjects.map((subject) => (
-              <option value={subject.id ?? ''} key={subject.id}>
-                {subject.title}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary" onClick={addClocking}>
-          Create Clocking
-        </button>
-      </form>
-    </div>
-  );
+            Create Clocking
+          </button>
+        </form>
+      </div>
+    );
 };
 
 const mapStateToProps = (state) => ({

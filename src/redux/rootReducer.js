@@ -8,7 +8,7 @@ import clockingReducer from './clockings/clockingReducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['student', 'subject', 'clocking'],
+  whitelist: ['student', 'subjects', 'clockings'],
 };
 
 const rootReducer = combineReducers({
