@@ -14,7 +14,7 @@ import Appheader from './components/header/Appheader';
 
 function App() {
   return (
-    <div className="bg-light">
+    <div className="">
       <Appheader />
       <div className="container-fluid">
         <Switch>
