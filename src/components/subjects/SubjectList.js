@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
+import Appheader from '../header/Appheader';
+import BottomNav from '../navbar/BottomNav';
 import SubjectListItem from './SubjectListItem';
 
 const SubjectList = ({ loadSubjects, subjects, history, student }) => {
@@ -17,20 +19,30 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
   };
   console.log(subjects);
   return (
-    <div>
-      <h1>Subject</h1>
-      <div div className="row">
-        {subjects?.length > 0 ? (
-          subjects.map((subject) => (
-            <div className="col-6 col-md-4">
-              <SubjectListItem subject={subject} />
-            </div>
-          ))
-        ) : (
-          <div>Nothing to show yet</div>
-        )}
+    <>
+      <div className="container-fliuid">
+        <div className="row py-3 mb-2 bg-white">
+          <span className="col-2 text-center">
+            <i class="fas fa-angle-left"></i>
+          </span>
+          <span className="col-8 text-center">Date here</span>
+          <span className="col-2 text-center">
+            <i class="fas fa-angle-right"></i>
+          </span>
+        </div>
+        <div className="row">
+          {subjects?.length > 0 ? (
+            subjects.map((subject) => (
+              <div className="col-6 col-md-4">
+                <SubjectListItem subject={subject} />
+              </div>
+            ))
+          ) : (
+            <div>Nothing to show yet</div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

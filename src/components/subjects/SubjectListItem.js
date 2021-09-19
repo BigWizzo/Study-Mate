@@ -9,16 +9,16 @@ const SubjectListItem = ({ subject, history }) => {
       className="card mb-3 c"
       onClick={() => history.push(`/subjects/${id}`)}
     >
-      <div className="row g-0 text-center align-items-center">
+      <div className="row py-4 g-0 text-center align-items-center">
         <div className="col-4">
           <div>
-            <i class="fas fa-book-open fa-2x"></i>
+            <i class="fas fa-book-open fa-3x"></i>
           </div>
         </div>
         <div className="col-8">
           <div className="card-body p-0">
             <small className="card-text">{title}</small>
-            <h5 className="card-title">53s</h5>
+            <h4 className="card-title">53s</h4>
           </div>
         </div>
       </div>

@@ -14,9 +14,9 @@ import Appheader from './components/header/Appheader';
 
 function App() {
   return (
-    <div>
+    <div className="bg-light">
       <Appheader />
-      <div className="container">
+      <div className="container-fluid">
         <Switch>
           <Route path="/" component={SubjectList} exact />
           <Route path="/login" component={StudentLogin} />
