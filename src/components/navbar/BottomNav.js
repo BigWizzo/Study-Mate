@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BottomNav = () => {
+  const handleClick = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
   return (
     <div className="row g-0 bottom-nav">
       <Link
@@ -31,15 +35,15 @@ const BottomNav = () => {
         </span>
         <p>Add Clocking</p>
       </Link>
-      <Link
-        to="/login"
+      <span
         className="bottom-link w-25 d-flex flex-column align-items-center text-decoration-none text-light"
+        onClick={handleClick}
       >
         <span className="py-3">
           <i className="fas fa-sign-out-alt fa-2x"></i>
         </span>
         <p>Logout</p>
-      </Link>
+      </span>
     </div>
   );
 };
