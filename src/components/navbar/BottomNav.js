@@ -9,7 +9,7 @@ const BottomNav = () => {
         className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i class="fas fa-book-open fa-2x"></i>
+          <i className="fas fa-book-open fa-2x"></i>
         </span>
         <p>Add Subject</p>
       </Link>
@@ -18,13 +18,16 @@ const BottomNav = () => {
         className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i class="far fa-clock fa-2x"></i>
+          <i className="far fa-clock fa-2x"></i>
         </span>
         <p>Add Clocking</p>
       </Link>
-      <Link className="w-25 d-flex flex-column align-items-center text-decoration-none text-light">
+      <Link
+        to="/"
+        className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
+      >
         <span className="py-3">
-          <i class="fas fa-chart-pie fa-2x"></i>
+          <i className="fas fa-chart-pie fa-2x"></i>
         </span>
         <p>Progress</p>
       </Link>
@@ -33,7 +36,7 @@ const BottomNav = () => {
         className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i class="fas fa-angle-double-up fa-2x"></i>
+          <i className="fas fa-angle-double-up fa-2x"></i>
         </span>
         <p>Login</p>
       </Link>

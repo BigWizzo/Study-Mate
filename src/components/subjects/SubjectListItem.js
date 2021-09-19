@@ -12,7 +12,7 @@ const SubjectListItem = ({ subject, history }) => {
       <div className="row py-4 g-0 text-center align-items-center">
         <div className="col-4">
           <div>
-            <i class="fas fa-book-open fa-3x"></i>
+            <i className="fas fa-book-open fa-3x"></i>
           </div>
         </div>
         <div className="col-8">

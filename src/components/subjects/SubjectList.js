@@ -23,17 +23,17 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
       <div className="container-fliuid">
         <div className="row py-3 mb-2 bg-white">
           <span className="col-2 text-center">
-            <i class="fas fa-angle-left"></i>
+            <i className="fas fa-angle-left"></i>
           </span>
           <span className="col-8 text-center">Date here</span>
           <span className="col-2 text-center">
-            <i class="fas fa-angle-right"></i>
+            <i className="fas fa-angle-right"></i>
           </span>
         </div>
         <div className="row">
           {subjects?.length > 0 ? (
             subjects.map((subject) => (
-              <div className="col-6 col-md-4">
+              <div key={subject.id} className="col-6 col-md-4">
                 <SubjectListItem subject={subject} />
               </div>
             ))
