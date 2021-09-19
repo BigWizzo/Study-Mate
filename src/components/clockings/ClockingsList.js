@@ -15,8 +15,6 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
     history.push('/clockings/new');
   };
 
-  console.log(clockings);
-
   return (
     <div>
       {clockings &&

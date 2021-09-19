@@ -6,6 +6,8 @@ import { useParams, withRouter } from 'react-router-dom';
 const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
   const { id } = useParams();
 
+  console.log(clockings);
+
   const clocking = clockings.filter((c) => c.id === parseInt(id));
 
   const editClocking = () => {
@@ -19,16 +21,20 @@ const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
 
   const { details, duration, topic } = clocking[0];
   return (
-    <div>
+    <div className="text-center my-5">
       <h1>Clocking</h1>
-      <p>{topic}</p>
-      <p>{duration}</p>
-      <p>{details}</p>
-      <button class="btn btn-primary" type="button" onClick={editClocking}>
+      <p>Topic: {topic}</p>
+      <p>Duration: {duration} Hours</p>
+      <p>Details: {details}</p>
+      <button
+        className="btn btn-primary mx-1"
+        type="button"
+        onClick={editClocking}
+      >
         Edit Clocking
       </button>
       <button
-        class="btn btn-primary"
+        className="btn btn-danger mx-1"
         type="button"
         onClick={deleteCurrentClocking}
       >
@@ -39,7 +45,7 @@ const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
 };
 
 const mapStateToProps = (state) => ({
-  clockings: state.clockings.clocking,
+  clockings: state.clockings.clockings,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -48,5 +54,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(withRouter(ClockingItemDetails));

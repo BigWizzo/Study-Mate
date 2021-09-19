@@ -9,7 +9,7 @@ const BottomNav = () => {
         className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i class="fas fa-home fa-2x"></i>
+          <i className="fas fa-home fa-2x"></i>
         </span>
         <p>Home</p>
       </Link>
@@ -36,7 +36,7 @@ const BottomNav = () => {
         className="w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i class="fas fa-sign-out-alt fa-2x"></i>
+          <i className="fas fa-sign-out-alt fa-2x"></i>
         </span>
         <p>Logout</p>
       </Link>
