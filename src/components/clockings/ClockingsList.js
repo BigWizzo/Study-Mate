@@ -17,7 +17,7 @@ const ClockingsList = ({ loadClockings, clockings, history }) => {
         clockings.map((clocking) => (
           <ClockingListItem key={clocking.id} clocking={clocking} />
         ))}
-      {!clockings < 1 && (
+      {clockings < 1 && (
         <h3 className="text-center my-4">No Clockings to show</h3>
       )}
     </div>

@@ -9,7 +9,6 @@ const StudentLogin = ({ logStudent, student, history }) => {
   if (student?.message === 'Logged in successfully') {
     history.push('/');
   }
-  console.log(student?.message);
 
   const signinStudent = (e) => {
     e.preventDefault();

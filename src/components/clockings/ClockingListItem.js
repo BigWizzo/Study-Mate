@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { dateShort } from '../../utils/utils';
 
 const ClockingListItem = ({ clocking }) => {
-  const { id, topic, duration } = clocking;
+  const { id, topic, duration, created_at } = clocking;
 
   return (
     <div>
@@ -19,9 +19,7 @@ const ClockingListItem = ({ clocking }) => {
           </div>
           <div className="col-6">
             <div className="card-body p-0">
-              <h5 className="card-title text-gray">
-                {dateShort(new Date().toString())}
-              </h5>
+              <h5 className="card-title text-gray">{dateShort(created_at)}</h5>
               <small className="card-text text-secondary">{topic}</small>
             </div>
           </div>
