@@ -11,8 +11,9 @@ import ClockingNew from './components/clockings/ClockingNew';
 import ClockingEdit from './components/clockings/ClockingEdit';
 import BottomNav from './components/navbar/BottomNav';
 import Appheader from './components/header/Appheader';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ student }) {
   return (
     <div className="">
       <Appheader />
@@ -30,9 +31,13 @@ function App() {
           <Route component={Page404} />
         </Switch>
       </div>
-      <BottomNav />
+      {student && <BottomNav />}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  student: state.student.student,
+});
+
+export default connect(mapStateToProps)(App);

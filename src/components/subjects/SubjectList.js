@@ -27,6 +27,7 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
             <i className="fas fa-angle-right"></i>
           </span>
         </div>
+        <h1 className="text-center my-2">Subjects</h1>
         <div className="row">
           {subjects?.length > 0 ? (
             subjects.map((subject) => (

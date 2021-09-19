@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { Button } from '@material-ui/core';
 import { loginStudentStart } from '../../redux/students/studentActions';
 import { connect } from 'react-redux';
 
@@ -29,19 +27,37 @@ const StudentLogin = ({ logStudent, student, history }) => {
   return (
     <div>
       <h1>Login</h1>
-      <TextField
-        required
-        label="Username"
-        value={username ?? ''}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <TextField
-        required
-        label="Password"
-        value={password ?? ''}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Button onClick={signinStudent}>Submit</Button>
+      <form>
+        <div className="mb-3">
+          <label className="form-label">User Name</label>
+          <input
+            type="text"
+            className="form-control"
+            value={username ?? ''}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input
+            type="text"
+            className="form-control"
+            label="Password"
+            value={password ?? ''}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-primary mx-2"
+          onClick={signinStudent}
+        >
+          Log In
+        </button>
+      </form>
+      <div className="my-4">
+        <a href="./signup">Sign Up</a>
+      </div>
     </div>
   );
 };
