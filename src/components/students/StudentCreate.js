@@ -15,10 +15,10 @@ const StudentCreate = ({ createStudent, history }) => {
         username,
         password,
       });
+      setUsername('');
+      setPassword('');
+      history.push(`/login`);
     }
-    setUsername('');
-    setPassword('');
-    history.push(`/login`);
   };
 
   return (

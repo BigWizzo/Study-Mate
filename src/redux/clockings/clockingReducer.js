@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   clockings: [],
   error: null,
-  meesage: null,
+  message: null,
 };
 
 const clockingReducer = (state = initialState, action) => {
@@ -23,10 +23,11 @@ const clockingReducer = (state = initialState, action) => {
       };
 
     case clockingActionTypes.CREATE_CLOCKING_SUCCESS:
+      debugger;
       return {
         ...state,
         loading: false,
-        meesage: 'success',
+        message: 'success',
         clockings: [...clockings, payload],
       };
 
@@ -34,7 +35,7 @@ const clockingReducer = (state = initialState, action) => {
       return {
         ...state,
         error: 'failed',
-        meesage: null,
+        message: null,
         loading: false,
       };
 

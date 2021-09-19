@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 
-const ClockingNew = ({ createClocking, student, subjects }) => {
+const ClockingNew = ({ createClocking, student, subjects, history }) => {
   const [topic, setTopic] = useState('');
   const [details, setDetails] = useState('');
   const [duration, setDuration] = useState('');
@@ -10,8 +10,8 @@ const ClockingNew = ({ createClocking, student, subjects }) => {
 
   const addClocking = (e) => {
     e.preventDefault();
-    if (!topic || !details) {
-      alert('Please enter both topic and details');
+    if (!topic || !details || !duration || selectSubject === '') {
+      alert('Please enter all the details');
     } else {
       createClocking({
         topic,
@@ -20,9 +20,12 @@ const ClockingNew = ({ createClocking, student, subjects }) => {
         subject_id: selectSubject,
         student_id: student.id.toString(),
       });
+      setTopic('');
+      setDetails('');
+      setDuration('');
+      setSelectSubject('');
+      history.push(`/`);
     }
-    setTopic('');
-    setDetails('');
   };
 
   return (

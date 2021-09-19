@@ -19,8 +19,8 @@ const ClockingEdit = ({
 
   const editCurrentClocking = (e) => {
     e.preventDefault();
-    if (!topic || !details) {
-      alert('Please enter both topic and details');
+    if (!topic || !details || !duration) {
+      alert('Please enter all details');
     } else {
       editClocking({
         ...filteredClocking,
@@ -28,10 +28,11 @@ const ClockingEdit = ({
         details,
         duration,
       });
+      setTopic('');
+      setDetails('');
+      setDuration('');
+      history.goBack();
     }
-    setTopic('');
-    setDetails('');
-    history.goBack();
   };
 
   return (

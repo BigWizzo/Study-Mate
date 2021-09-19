@@ -19,9 +19,9 @@ const StudentLogin = ({ logStudent, student, history }) => {
         username,
         password,
       });
+      setUsername('');
+      setPassword('');
     }
-    setUsername('');
-    setPassword('');
   };
 
   return (

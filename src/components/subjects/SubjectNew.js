@@ -16,10 +16,10 @@ const SubjectNew = ({ createSubject, history, student }) => {
         description,
         student_id: student.id.toString(),
       });
+      setTitle('');
+      setDescription('');
+      history.push(`/`);
     }
-    setTitle('');
-    setDescription('');
-    history.push(`/`);
   };
 
   return (

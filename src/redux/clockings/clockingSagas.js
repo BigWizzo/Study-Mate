@@ -15,7 +15,9 @@ function* loadClockings({ payload }) {
 
 function* createClocking({ payload }) {
   try {
+    debugger;
     const clockingDetails = yield call(apiService.createClocking, payload);
+    console.log(clockingDetails);
     yield put(clockingActions.createClockingSuccess(clockingDetails));
   } catch (error) {
     yield put(clockingActions.createClockingFailure(error));
