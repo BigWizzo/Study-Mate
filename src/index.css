@@ -28,8 +28,16 @@
   font-size: 22px;
 }
 
+.font-18 {
+  font-size: 18px;
+}
+
 .w-25 {
   width: 25%;
+}
+
+.text-gray {
+  color: #484a4c;
 }
 
 .w-50 {

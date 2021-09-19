@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const SubjectListItem = ({ subject, history }) => {
   const { id, title } = subject;
   return (
-    <div
-      className="card mb-3 c"
-      onClick={() => history.push(`/subjects/${id}`)}
-    >
+    <Link to={`/subjects/${id}`} className="card mb-3 text-decoration-none">
       <div className="row py-4 g-0 text-center align-items-center">
         <div className="col-4">
           <div>
@@ -22,7 +19,7 @@ const SubjectListItem = ({ subject, history }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
