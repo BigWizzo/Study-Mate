@@ -2,7 +2,6 @@ import { Route, Switch } from 'react-router-dom';
 import SubjectList from './components/subjects/SubjectList';
 import StudentLogin from './components/students/StudentLogin';
 import Page404 from './components/Page404/Page404';
-import NavBar from './components/navbar/NavBar';
 import ClockingsList from './components/clockings/ClockingsList';
 import StudentCreate from './components/students/StudentCreate';
 import StudentLogout from './components/students/StudentLogout';
@@ -11,11 +10,13 @@ import SubjectNew from './components/subjects/SubjectNew';
 import ClockingNew from './components/clockings/ClockingNew';
 import ClockingEdit from './components/clockings/ClockingEdit';
 import BottomNav from './components/navbar/BottomNav';
+import Appheader from './components/header/Appheader';
 
 function App() {
   return (
     <div>
-      <div className="container-fluid">
+      <Appheader />
+      <div className="container">
         <Switch>
           <Route path="/" component={SubjectList} exact />
           <Route path="/login" component={StudentLogin} />

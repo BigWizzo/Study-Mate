@@ -24,6 +24,10 @@
   color: #adbac7;
 }
 
+.font-22 {
+  font-size: 22px;
+}
+
 .w-25 {
   width: 25%;
 }
@@ -34,4 +38,8 @@
 
 .subject-card {
   cursor: pointers;
+}
+
+.appheader {
+  height: 10vh;
 }
