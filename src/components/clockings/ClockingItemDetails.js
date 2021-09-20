@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { deleteClockingStart } from '../../redux/clockings/clockingActions';
 import { useParams, withRouter } from 'react-router-dom';
 
-const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
+const ClockingItemDetails = ({
+  clockings,
+  history,
+  deleteClocking,
+  student,
+}) => {
   const { id } = useParams();
+
+  useEffect(() => {
+    if (!student) {
+      history.push('/login');
+    }
+  }, [student, history]);
 
   const clocking = clockings.filter((c) => c.id === parseInt(id));
 
@@ -44,6 +55,7 @@ const ClockingItemDetails = ({ clockings, history, deleteClocking }) => {
 
 const mapStateToProps = (state) => ({
   clockings: state.clockings.clockings,
+  student: state.student.student,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 
@@ -7,6 +7,12 @@ const ClockingNew = ({ createClocking, student, subjects, history }) => {
   const [details, setDetails] = useState('');
   const [duration, setDuration] = useState('');
   const [selectSubject, setSelectSubject] = useState('');
+
+  useEffect(() => {
+    if (!student) {
+      history.push('/login');
+    }
+  }, [student, history]);
 
   const addClocking = (e) => {
     e.preventDefault();

@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createSubjectStart } from '../../redux/subjects/subjectActions';
 import { connect } from 'react-redux';
 
 const SubjectNew = ({ createSubject, history, student }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    if (!student) {
+      history.push('/login');
+    }
+  }, [student, history]);
 
   const addSubject = (e) => {
     e.preventDefault();

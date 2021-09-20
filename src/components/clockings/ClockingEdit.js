@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { editClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const ClockingEdit = ({ history, clockings, editClocking }) => {
+const ClockingEdit = ({ history, clockings, editClocking, student }) => {
   const { id } = useParams();
   const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
   const [topic, setTopic] = useState(filteredClocking.topic);
   const [details, setDetails] = useState(filteredClocking.details);
   const [duration, setDuration] = useState(filteredClocking.duration);
+
+  useEffect(() => {
+    if (!student) {
+      history.push('/login');
+    }
+  }, [student, history]);
 
   const editCurrentClocking = (e) => {
     e.preventDefault();

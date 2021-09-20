@@ -4,12 +4,16 @@ import { useParams, withRouter } from 'react-router-dom';
 import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
 
-const ClockingsList = ({ loadClockings, clockings }) => {
+const ClockingsList = ({ loadClockings, clockings, history, student }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    loadClockings(id);
-  }, [id, loadClockings]);
+    if (!student) {
+      history.push('./login');
+    } else {
+      loadClockings(id);
+    }
+  }, [id, loadClockings, history, student]);
 
   return (
     <div>
