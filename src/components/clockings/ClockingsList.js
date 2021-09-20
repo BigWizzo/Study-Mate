@@ -9,7 +9,7 @@ const ClockingsList = ({ loadClockings, clockings }) => {
 
   useEffect(() => {
     loadClockings(id);
-  }, []);
+  }, [id, loadClockings]);
 
   return (
     <div>

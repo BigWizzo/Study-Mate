@@ -4,7 +4,6 @@ const initialState = {
   loading: false,
   clockings: [],
   error: null,
-  message: null,
 };
 
 const clockingReducer = (state = initialState, action) => {
@@ -18,7 +17,6 @@ const clockingReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        message: 'success',
         clockings: payload,
       };
 
@@ -26,16 +24,13 @@ const clockingReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        message: 'success',
         clockings: [...clockings, payload],
       };
 
     case clockingActionTypes.EDIT_CLOCKING_SUCCESS:
-      debugger;
       return {
         ...state,
         loading: false,
-        message: 'edited',
         clockings: clockings.map((el) => (el.id === payload.id ? payload : el)),
       };
 
@@ -43,15 +38,12 @@ const clockingReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        message: 'deleted',
         clockings: [...clockings, payload],
       };
 
     case clockingActionTypes.CLOCKINGS_FETCH_FAILURE:
       return {
         ...state,
-        error: 'failed',
-        message: null,
         loading: false,
       };
 

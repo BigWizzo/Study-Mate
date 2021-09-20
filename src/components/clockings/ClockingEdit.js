@@ -3,14 +3,7 @@ import { editClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const ClockingEdit = ({
-  createClocking,
-  history,
-  student,
-  subjects,
-  clockings,
-  editClocking,
-}) => {
+const ClockingEdit = ({ history, clockings, editClocking }) => {
   const { id } = useParams();
   const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
   const [topic, setTopic] = useState(filteredClocking.topic);

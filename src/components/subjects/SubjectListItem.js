@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SubjectListItem = ({ subject, clockings }) => {
+const SubjectListItem = ({ subject }) => {
   const { id, title, description } = subject;
 
   return (

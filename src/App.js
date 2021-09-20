@@ -4,7 +4,6 @@ import StudentLogin from './components/students/StudentLogin';
 import Page404 from './components/Page404/Page404';
 import ClockingsList from './components/clockings/ClockingsList';
 import StudentCreate from './components/students/StudentCreate';
-import StudentLogout from './components/students/StudentLogout';
 import ClockingItemDetails from './components/clockings/ClockingItemDetails';
 import SubjectNew from './components/subjects/SubjectNew';
 import ClockingNew from './components/clockings/ClockingNew';
@@ -22,7 +21,6 @@ function App({ student }) {
           <Route path="/" component={SubjectList} exact />
           <Route path="/login" component={StudentLogin} />
           <Route path="/signup" component={StudentCreate} />
-          <Route path="/login" component={StudentLogout} />
           <Route path="/subjects/new" component={SubjectNew} />
           <Route path="/subjects/:id" component={ClockingsList} />
           <Route path="/clockings/new" component={ClockingNew} />
