@@ -24,7 +24,7 @@ const SubjectNew = ({ createSubject, history, student }) => {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>New Subject</h1>
       <form>
         <div className="mb-3">
           <label className="form-label">Title</label>

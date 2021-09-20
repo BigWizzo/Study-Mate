@@ -16,7 +16,10 @@ function* loginStudent({ payload }) {
 
 function* signupStudent({ payload }) {
   try {
-    yield call(apiService.createStudent, payload);
+    const studentDetails = yield call(apiService.createStudent, payload);
+    // const { token, student, message } = studentDetails;
+    yield console.log(studentDetails);
+    // yield put(studentActions.loginStudentSuccess({ ...student, message }));
   } catch (error) {
     yield put(studentActions.loginStudentFailure(error));
   }

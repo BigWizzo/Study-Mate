@@ -15,11 +15,9 @@ function* loadSubjectsList() {
 function* createSubject({ payload }) {
   try {
     const subjectDetails = yield call(apiService.createSubject, payload);
-    // const { token, student, message } = studentDetails;
-    // yield localStorage.setItem('token', token);
-    // yield put(subjectActionTypes.loginStudentSuccess({ ...student, message }));
+    yield put(subjectActions.createSubjectSuccess(subjectDetails));
   } catch (error) {
-    yield put(subjectActionTypes.loginStudentFailure(error));
+    yield put(subjectActions.createSubjectFailure(error));
   }
 }
 

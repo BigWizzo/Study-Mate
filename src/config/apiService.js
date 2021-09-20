@@ -7,9 +7,9 @@ const bearer = () => ({
   },
 });
 
-export const createStudent = () => {
+export const createStudent = (data) => {
   return axios
-    .post(studentURL, bearer())
+    .post(studentURL, data)
     .then((res) => res.data)
     .catch((e) => e);
 };

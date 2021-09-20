@@ -13,8 +13,6 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
     }
   }, []);
 
-  console.log(student);
-
   return (
     <>
       <div className="container-fliuid">

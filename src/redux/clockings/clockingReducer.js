@@ -18,7 +18,7 @@ const clockingReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        meesage: 'success',
+        message: 'success',
         clockings: payload,
       };
 
