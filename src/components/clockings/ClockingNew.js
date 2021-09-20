@@ -61,7 +61,7 @@ const ClockingNew = ({ createClocking, student, subjects, history }) => {
         </div>
         <div className="mb-3">
           <select
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
             value={selectSubject}
             onChange={(e) => setSelectSubject(e.target.value)}

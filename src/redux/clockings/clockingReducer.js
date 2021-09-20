@@ -31,11 +31,12 @@ const clockingReducer = (state = initialState, action) => {
       };
 
     case clockingActionTypes.EDIT_CLOCKING_SUCCESS:
+      debugger;
       return {
         ...state,
         loading: false,
         message: 'edited',
-        clockings: [...clockings, payload],
+        clockings: clockings.map((el) => (el.id === payload.id ? payload : el)),
       };
 
     case clockingActionTypes.DELETE_CLOCKING_SUCCESS:
