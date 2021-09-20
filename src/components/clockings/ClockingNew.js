@@ -53,7 +53,7 @@ const ClockingNew = ({ createClocking, student, subjects, history }) => {
         <div className="mb-3">
           <label className="form-label">Duration</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             value={duration ?? ''}
             onChange={(e) => setDuration(e.target.value)}

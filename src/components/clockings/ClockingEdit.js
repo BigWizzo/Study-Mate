@@ -35,12 +35,6 @@ const ClockingEdit = ({
     }
   };
 
-  const item = { id: 2, added: 'extra' };
-  const items = [{ id: 1 }, { id: 2 }, { id: 3 }];
-
-  const updatedItems = items.map((el) => (el.id === item.id ? item : el));
-  console.log(updatedItems);
-
   return (
     <div>
       <h1>Edit Clocking</h1>
@@ -66,7 +60,7 @@ const ClockingEdit = ({
         <div className="mb-3">
           <label className="form-label">Duration</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             value={duration ?? ''}
             onChange={(e) => setDuration(e.target.value)}
