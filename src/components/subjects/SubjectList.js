@@ -55,9 +55,9 @@ const SubjectList = ({
 };
 
 SubjectList.propTypes = {
-  student: PropTypes.objectOf(PropTypes.object).isRequired,
-  subjects: PropTypes.objectOf(PropTypes.object).isRequired,
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  student: PropTypes.objectOf(PropTypes.any).isRequired,
+  subjects: PropTypes.arrayOf(PropTypes.any).isRequired,
+  history: PropTypes.shape({ push: PropTypes.func }).isRequired,
   loadSubjects: PropTypes.func.isRequired,
 };
 

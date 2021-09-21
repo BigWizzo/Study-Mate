@@ -36,7 +36,7 @@ function App({ student }) {
 }
 
 App.propTypes = {
-  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  student: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = (state) => ({

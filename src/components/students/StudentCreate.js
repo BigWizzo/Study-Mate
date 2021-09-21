@@ -66,7 +66,7 @@ const StudentCreate = ({ createStudent, history }) => {
 };
 
 StudentCreate.propTypes = {
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
   createStudent: PropTypes.func.isRequired,
 };
 

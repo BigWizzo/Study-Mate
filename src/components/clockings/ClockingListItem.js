@@ -44,7 +44,7 @@ ClockingListItem.propTypes = {
   topic: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
   created_at: PropTypes.string.isRequired,
-  clocking: PropTypes.objectOf(PropTypes.object).isRequired,
+  clocking: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default ClockingListItem;

@@ -65,8 +65,8 @@ const SubjectNew = ({ createSubject, history, student }) => {
 };
 
 SubjectNew.propTypes = {
-  student: PropTypes.objectOf(PropTypes.object).isRequired,
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  student: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
   createSubject: PropTypes.func.isRequired,
 };
 

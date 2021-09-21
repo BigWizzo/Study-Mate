@@ -66,9 +66,9 @@ const ClockingItemDetails = ({
 };
 
 ClockingItemDetails.propTypes = {
-  student: PropTypes.objectOf(PropTypes.object).isRequired,
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
-  clockings: PropTypes.objectOf(PropTypes.object).isRequired,
+  student: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+  clockings: PropTypes.arrayOf(PropTypes.any).isRequired,
   deleteClocking: PropTypes.func.isRequired,
 };
 
