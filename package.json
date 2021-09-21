@@ -2,6 +2,7 @@
   "name": "study-mate-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bigwizzo.github.io/study-mate-frontend",
   "dependencies": {
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",
@@ -13,6 +14,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "date-fns": "^2.24.0",
+    "gh-pages": "^3.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,6 +33,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
