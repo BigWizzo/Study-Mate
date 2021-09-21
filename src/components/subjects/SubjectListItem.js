@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SubjectListItem = ({ subject }) => {
-  const { id, title, description } = subject;
-
+const SubjectListItem = ({ id, title, description }) => {
   return (
     <Link to={`/subjects/${id}`} className="card mb-3 text-decoration-none">
       <div className="row py-4 g-0 text-center align-items-center">
@@ -26,6 +24,7 @@ const SubjectListItem = ({ subject }) => {
 
 SubjectListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default SubjectListItem;

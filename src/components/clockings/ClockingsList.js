@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useParams, withRouter } from 'react-router-dom';
 import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
+import { dateShort } from '../../utils/utils';
 
 const ClockingsList = ({ loadClockings, clockings, history, student }) => {
   const { id } = useParams();
@@ -19,7 +20,13 @@ const ClockingsList = ({ loadClockings, clockings, history, student }) => {
     <div>
       {clockings &&
         clockings.map((clocking) => (
-          <ClockingListItem key={clocking.id} clocking={clocking} />
+          <ClockingListItem
+            clocking={clocking}
+            key={clocking?.id}
+            topic={clocking?.topic}
+            duration={clocking?.duration}
+            created_at={dateShort(clocking?.created_at)}
+          />
         ))}
       {clockings < 1 && (
         <h3 className="text-center my-4">No Clockings to show</h3>

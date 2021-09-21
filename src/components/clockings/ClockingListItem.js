@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { dateShort } from '../../utils/utils';
+import PropTypes from 'prop-types';
 
-const ClockingListItem = ({ clocking }) => {
-  const { id, topic, duration, created_at } = clocking;
-
+const ClockingListItem = ({ topic, duration, created_at, clocking }) => {
+  const { id } = clocking;
   return (
     <div>
       <Link
@@ -19,7 +18,7 @@ const ClockingListItem = ({ clocking }) => {
           </div>
           <div className="col-6">
             <div className="card-body p-0">
-              <h5 className="card-title text-gray">{dateShort(created_at)}</h5>
+              <h5 className="card-title text-gray">{created_at}</h5>
               <small className="card-text text-secondary">{topic}</small>
             </div>
           </div>
@@ -34,6 +33,12 @@ const ClockingListItem = ({ clocking }) => {
       </Link>
     </div>
   );
+};
+
+ClockingListItem.propTypes = {
+  topic: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
+  created_at: PropTypes.string.isRequired,
 };
 
 export default ClockingListItem;

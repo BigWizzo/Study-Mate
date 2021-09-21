@@ -72,7 +72,7 @@ const ClockingNew = ({ createClocking, student, subjects, history }) => {
             value={selectSubject}
             onChange={(e) => setSelectSubject(e.target.value)}
           >
-            <option selected>Select Subject</option>
+            <option defaultValue="Select Subject">Select Subject</option>
             {subjects.map((subject) => (
               <option value={subject.id ?? ''} key={subject.id}>
                 {subject.title}

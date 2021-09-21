@@ -31,8 +31,12 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
         <div className="row">
           {subjects?.length > 0 ? (
             subjects.map((subject) => (
-              <div key={subject.id} className="col-6 col-md-4">
-                <SubjectListItem subject={subject} />
+              <div key={subject?.id} className="col-6 col-md-4">
+                <SubjectListItem
+                  id={subject?.id}
+                  title={subject?.title}
+                  description={subject?.description}
+                />
               </div>
             ))
           ) : (
