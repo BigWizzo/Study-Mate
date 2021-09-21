@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 import { dateToday } from '../../utils/utils';
 import SubjectListItem from './SubjectListItem';

@@ -20,6 +20,8 @@ function App({ student }) {
       <div className="container-fluid">
         <Switch>
           <Route path="/" component={SubjectList} exact />
+          <Route path="/study-mate-frontend" component={SubjectList} />
+          <Route path="/subjects" component={SubjectList} />
           <Route path="/login" component={StudentLogin} />
           <Route path="/signup" component={StudentCreate} />
           <Route path="/subjects/new" component={SubjectNew} />
