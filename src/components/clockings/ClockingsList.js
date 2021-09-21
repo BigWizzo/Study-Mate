@@ -29,7 +29,7 @@ const ClockingsList = ({ loadClockings, clockings, history, student }) => {
           />
         ))}
       {clockings < 1 && (
-        <h3 className="text-center my-4">No Clockings to show</h3>
+        <h3 className="text-center Clockings my-4">No Clockings to show</h3>
       )}
     </div>
   );

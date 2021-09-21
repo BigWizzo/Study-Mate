@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 import { dateToday } from '../../utils/utils';
 import SubjectListItem from './SubjectListItem';
@@ -7,7 +8,7 @@ import SubjectListItem from './SubjectListItem';
 const SubjectList = ({ loadSubjects, subjects, history, student }) => {
   useEffect(() => {
     if (!student) {
-      history.push('./login');
+      history.push('/login');
     } else {
       loadSubjects();
     }
@@ -59,4 +60,6 @@ const mapDispatchToProps = (dispatch) => ({
   loadSubjects: () => dispatch(subjectFetchRequest()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SubjectList);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SubjectList)
+);
