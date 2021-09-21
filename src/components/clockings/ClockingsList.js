@@ -5,7 +5,9 @@ import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
 import { dateShort } from '../../utils/utils';
 
-const ClockingsList = ({ loadClockings, clockings, history, student }) => {
+const ClockingsList = ({
+  loadClockings, clockings, history, student,
+}) => {
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,8 +20,8 @@ const ClockingsList = ({ loadClockings, clockings, history, student }) => {
 
   return (
     <div>
-      {clockings &&
-        clockings.map((clocking) => (
+      {clockings
+        && clockings.map((clocking) => (
           <ClockingListItem
             clocking={clocking}
             key={clocking?.id}
@@ -46,5 +48,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withRouter(ClockingsList));

@@ -1,4 +1,6 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import {
+  all, call, put, takeLatest,
+} from 'redux-saga/effects';
 import studentActionTypes from './studentActionTypes';
 import * as studentActions from './studentActions';
 import * as apiService from '../../config/apiService';

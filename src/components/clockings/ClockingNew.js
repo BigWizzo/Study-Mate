@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { createClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
+import { createClockingStart } from '../../redux/clockings/clockingActions';
 
-const ClockingNew = ({ createClocking, student, subjects, history }) => {
+const ClockingNew = ({
+  createClocking, student, subjects, history,
+}) => {
   const [topic, setTopic] = useState('');
   const [details, setDetails] = useState('');
   const [duration, setDuration] = useState('');
@@ -30,7 +32,7 @@ const ClockingNew = ({ createClocking, student, subjects, history }) => {
       setDetails('');
       setDuration('');
       setSelectSubject('');
-      history.push(`/`);
+      history.push('/');
     }
   };
 
@@ -94,8 +96,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createClocking: (clockingDetails) =>
-    dispatch(createClockingStart(clockingDetails)),
+  createClocking: (clockingDetails) => dispatch(createClockingStart(clockingDetails)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClockingNew);

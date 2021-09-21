@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ClockingListItem = ({ topic, duration, created_at, clocking }) => {
+const ClockingListItem = ({
+  topic, duration, created_at, clocking,
+}) => {
   const { id } = clocking;
   return (
     <div>
@@ -13,7 +15,7 @@ const ClockingListItem = ({ topic, duration, created_at, clocking }) => {
         <div className="row py-2 g-0 align-items-center">
           <div className="col-3">
             <div className="m-2">
-              <i className="fas fa-clock fa-2x text-success"></i>
+              <i className="fas fa-clock fa-2x text-success" />
             </div>
           </div>
           <div className="col-6">
@@ -26,7 +28,7 @@ const ClockingListItem = ({ topic, duration, created_at, clocking }) => {
             <h3 className="card-title">
               {duration}
               <span className="font-18">Hrs</span>
-              <i className="fas fa-chevron-right font-18 mx-2"></i>
+              <i className="fas fa-chevron-right font-18 mx-2" />
             </h3>
           </div>
         </div>

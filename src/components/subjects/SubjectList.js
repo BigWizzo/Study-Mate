@@ -5,7 +5,9 @@ import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 import { dateToday } from '../../utils/utils';
 import SubjectListItem from './SubjectListItem';
 
-const SubjectList = ({ loadSubjects, subjects, history, student }) => {
+const SubjectList = ({
+  loadSubjects, subjects, history, student,
+}) => {
   useEffect(() => {
     if (!student) {
       history.push('/login');
@@ -19,13 +21,13 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
       <div className="container-fliuid">
         <div className="row py-3 mb-2 bg-white">
           <span className="col-2 text-center">
-            <i className="fas fa-angle-left"></i>
+            <i className="fas fa-angle-left" />
           </span>
           <span className="col-8 text-center">
             {dateToday(new Date().toString())}
           </span>
           <span className="col-2 text-center">
-            <i className="fas fa-angle-right"></i>
+            <i className="fas fa-angle-right" />
           </span>
         </div>
         <h1 className="text-center my-2">Subjects</h1>
@@ -61,5 +63,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SubjectList)
+  connect(mapStateToProps, mapDispatchToProps)(SubjectList),
 );

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { deleteClockingStart } from '../../redux/clockings/clockingActions';
 import { useParams, withRouter } from 'react-router-dom';
+import { deleteClockingStart } from '../../redux/clockings/clockingActions';
 
 const ClockingItemDetails = ({
   clockings,
@@ -32,9 +32,20 @@ const ClockingItemDetails = ({
   return (
     <div className="text-center my-5">
       <h1>Clocking</h1>
-      <p>Topic: {topic}</p>
-      <p>Duration: {duration} Hours</p>
-      <p>Details: {details}</p>
+      <p>
+        Topic:
+        {topic}
+      </p>
+      <p>
+        Duration:
+        {duration}
+        {' '}
+        Hours
+      </p>
+      <p>
+        Details:
+        {details}
+      </p>
       <button
         className="btn btn-primary mx-1"
         type="button"
@@ -64,5 +75,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withRouter(ClockingItemDetails));

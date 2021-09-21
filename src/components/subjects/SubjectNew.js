@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { createSubjectStart } from '../../redux/subjects/subjectActions';
 import { connect } from 'react-redux';
+import { createSubjectStart } from '../../redux/subjects/subjectActions';
 
 const SubjectNew = ({ createSubject, history, student }) => {
   const [title, setTitle] = useState('');
@@ -24,7 +24,7 @@ const SubjectNew = ({ createSubject, history, student }) => {
       });
       setTitle('');
       setDescription('');
-      history.push(`/`);
+      history.push('/');
     }
   };
 
@@ -63,8 +63,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createSubject: (subjectDetails) =>
-    dispatch(createSubjectStart(subjectDetails)),
+  createSubject: (subjectDetails) => dispatch(createSubjectStart(subjectDetails)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubjectNew);

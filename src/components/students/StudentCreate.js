@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { createStudentStart } from '../../redux/students/studentActions';
 import { connect } from 'react-redux';
+import { createStudentStart } from '../../redux/students/studentActions';
 
 const StudentCreate = ({ createStudent, history }) => {
   const [username, setUsername] = useState('');
@@ -17,7 +17,7 @@ const StudentCreate = ({ createStudent, history }) => {
       });
       setUsername('');
       setPassword('');
-      history.push(`/login`);
+      history.push('/login');
     }
   };
 
@@ -60,8 +60,7 @@ const StudentCreate = ({ createStudent, history }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  createStudent: (studentDetails) =>
-    dispatch(createStudentStart(studentDetails)),
+  createStudent: (studentDetails) => dispatch(createStudentStart(studentDetails)),
 });
 
 export default connect(null, mapDispatchToProps)(StudentCreate);

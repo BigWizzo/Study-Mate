@@ -28,7 +28,7 @@ test('should render the clockings list component', () => {
           />
         </BrowserRouter>
       </PersistGate>
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

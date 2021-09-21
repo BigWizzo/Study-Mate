@@ -1,4 +1,6 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import {
+  all, call, put, takeLatest,
+} from 'redux-saga/effects';
 import clockingActionTypes from './clockingActionTypes';
 import * as clockingActions from './clockingActions';
 import * as apiService from '../../config/apiService';

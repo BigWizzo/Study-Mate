@@ -13,7 +13,7 @@ const BottomNav = () => {
         className="bottom-link w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i className="fas fa-home fa-2x"></i>
+          <i className="fas fa-home fa-2x" />
         </span>
         <p>Home</p>
       </Link>
@@ -22,7 +22,7 @@ const BottomNav = () => {
         className="bottom-link w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i className="fas fa-book-open fa-2x"></i>
+          <i className="fas fa-book-open fa-2x" />
         </span>
         <p>Add Subject</p>
       </Link>
@@ -31,7 +31,7 @@ const BottomNav = () => {
         className="bottom-link w-25 d-flex flex-column align-items-center text-decoration-none text-light"
       >
         <span className="py-3">
-          <i className="far fa-clock fa-2x"></i>
+          <i className="far fa-clock fa-2x" />
         </span>
         <p>Add Clocking</p>
       </Link>
@@ -40,7 +40,7 @@ const BottomNav = () => {
         onClick={handleClick}
       >
         <span className="py-3">
-          <i className="fas fa-sign-out-alt fa-2x"></i>
+          <i className="fas fa-sign-out-alt fa-2x" />
         </span>
         <p>Logout</p>
       </span>

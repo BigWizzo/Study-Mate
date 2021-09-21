@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { loginStudentStart } from '../../redux/students/studentActions';
 import { connect } from 'react-redux';
+import { loginStudentStart } from '../../redux/students/studentActions';
 
 const StudentLogin = ({ logStudent, student, history }) => {
   const [username, setUsername] = useState('');

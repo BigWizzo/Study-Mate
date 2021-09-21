@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import SubjectList from './components/subjects/SubjectList';
 import StudentLogin from './components/students/StudentLogin';
 import Page404 from './components/Page404/Page404';
@@ -10,7 +11,6 @@ import ClockingNew from './components/clockings/ClockingNew';
 import ClockingEdit from './components/clockings/ClockingEdit';
 import BottomNav from './components/navbar/BottomNav';
 import Appheader from './components/header/Appheader';
-import { connect } from 'react-redux';
 
 function App({ student }) {
   return (

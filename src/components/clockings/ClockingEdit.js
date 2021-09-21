@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { editClockingStart } from '../../redux/clockings/clockingActions';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { editClockingStart } from '../../redux/clockings/clockingActions';
 
-const ClockingEdit = ({ history, clockings, editClocking, student }) => {
+const ClockingEdit = ({
+  history, clockings, editClocking, student,
+}) => {
   const { id } = useParams();
   const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
   const [topic, setTopic] = useState(filteredClocking.topic);
@@ -84,8 +86,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  editClocking: (clockingDetails) =>
-    dispatch(editClockingStart(clockingDetails)),
+  editClocking: (clockingDetails) => dispatch(editClockingStart(clockingDetails)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClockingEdit);

@@ -14,7 +14,7 @@ test('should render the Covid19-Catalogue-Board Application', () => {
           <App />
         </BrowserRouter>
       </PersistGate>
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
