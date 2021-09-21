@@ -20,7 +20,7 @@
 
 ## Check the Live Version
 
-Open [Live Version Link](https://bigwizzo.github.io/study-mate-frontend)
+Open [Live Version Link](https://study-mate-frontend.netlify.app/login)
 
 ### Prerequisites
 
