@@ -1,4 +1,6 @@
+/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { editClockingStart } from '../../redux/clockings/clockingActions';
@@ -7,7 +9,9 @@ const ClockingEdit = ({
   history, clockings, editClocking, student,
 }) => {
   const { id } = useParams();
-  const filteredClocking = clockings.filter((c) => c.id === parseInt(id))[0];
+  const filteredClocking = clockings.filter(
+    (c) => c.id === parseInt(id, 10),
+  )[0];
   const [topic, setTopic] = useState(filteredClocking.topic);
   const [details, setDetails] = useState(filteredClocking.details);
   const [duration, setDuration] = useState(filteredClocking.duration);
@@ -41,31 +45,37 @@ const ClockingEdit = ({
       <h1>Edit Clocking</h1>
       <form>
         <div className="mb-3">
-          <label className="form-label">Topic</label>
-          <input
-            type="text"
-            className="form-control"
-            value={topic ?? ''}
-            onChange={(e) => setTopic(e.target.value)}
-          />
+          <label className="form-label" htmlFor="topic">
+            Topic
+            <input
+              type="text"
+              className="form-control"
+              value={topic ?? ''}
+              onChange={(e) => setTopic(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Details</label>
-          <input
-            type="text"
-            className="form-control"
-            value={details ?? ''}
-            onChange={(e) => setDetails(e.target.value)}
-          />
+          <label className="form-label" htmlFor="details">
+            Details
+            <input
+              type="text"
+              className="form-control"
+              value={details ?? ''}
+              onChange={(e) => setDetails(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Duration</label>
-          <input
-            type="number"
-            className="form-control"
-            value={duration ?? ''}
-            onChange={(e) => setDuration(e.target.value)}
-          />
+          <label className="form-label" htmlFor="duration">
+            Duration
+            <input
+              type="number"
+              className="form-control"
+              value={duration ?? ''}
+              onChange={(e) => setDuration(e.target.value)}
+            />
+          </label>
         </div>
         <button
           type="submit"
@@ -77,6 +87,13 @@ const ClockingEdit = ({
       </form>
     </div>
   );
+};
+
+ClockingEdit.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  clockings: PropTypes.objectOf(PropTypes.object).isRequired,
+  editClocking: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

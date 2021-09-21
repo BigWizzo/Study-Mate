@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ClockingListItem = ({
-  topic, duration, created_at, clocking,
+  topic,
+  duration,
+  created_at: createdAt,
+  clocking,
 }) => {
   const { id } = clocking;
   return (
@@ -20,7 +23,7 @@ const ClockingListItem = ({
           </div>
           <div className="col-6">
             <div className="card-body p-0">
-              <h5 className="card-title text-gray">{created_at}</h5>
+              <h5 className="card-title text-gray">{createdAt}</h5>
               <small className="card-text text-secondary">{topic}</small>
             </div>
           </div>
@@ -41,6 +44,7 @@ ClockingListItem.propTypes = {
   topic: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
   created_at: PropTypes.string.isRequired,
+  clocking: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default ClockingListItem;

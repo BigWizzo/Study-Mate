@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { subjectFetchRequest } from '../../redux/subjects/subjectActions';
 import { dateToday } from '../../utils/utils';
@@ -51,6 +52,13 @@ const SubjectList = ({
       </div>
     </>
   );
+};
+
+SubjectList.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  subjects: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  loadSubjects: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

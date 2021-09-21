@@ -23,6 +23,7 @@ const SubjectListItem = ({ id, title, description }) => (
 SubjectListItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default SubjectListItem;

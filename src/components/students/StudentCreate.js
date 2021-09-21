@@ -1,5 +1,7 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createStudentStart } from '../../redux/students/studentActions';
 
 const StudentCreate = ({ createStudent, history }) => {
@@ -26,23 +28,27 @@ const StudentCreate = ({ createStudent, history }) => {
       <h1>Sign Up</h1>
       <form>
         <div className="mb-3">
-          <label className="form-label">User Name</label>
-          <input
-            type="text"
-            className="form-control"
-            value={username ?? ''}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <label className="form-label" htmlFor="topic">
+            User Name
+            <input
+              type="text"
+              className="form-control"
+              value={username ?? ''}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Password</label>
-          <input
-            type="text"
-            className="form-control"
-            label="Password"
-            value={password ?? ''}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <label className="form-label" htmlFor="topic">
+            Password
+            <input
+              type="text"
+              className="form-control"
+              label="Password"
+              value={password ?? ''}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
         </div>
         <button
           type="submit"
@@ -57,6 +63,11 @@ const StudentCreate = ({ createStudent, history }) => {
       </div>
     </div>
   );
+};
+
+StudentCreate.propTypes = {
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  createStudent: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

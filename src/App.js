@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import SubjectList from './components/subjects/SubjectList';
 import StudentLogin from './components/students/StudentLogin';
 import Page404 from './components/Page404/Page404';
@@ -33,6 +34,10 @@ function App({ student }) {
     </>
   );
 }
+
+App.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 const mapStateToProps = (state) => ({
   student: state.student.student,

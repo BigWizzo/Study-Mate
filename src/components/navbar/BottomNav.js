@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -38,6 +39,8 @@ const BottomNav = () => {
       <span
         className="bottom-link w-25 d-flex flex-column align-items-center text-decoration-none text-light"
         onClick={handleClick}
+        role="button"
+        tabIndex="0"
       >
         <span className="py-3">
           <i className="fas fa-sign-out-alt fa-2x" />

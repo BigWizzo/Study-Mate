@@ -1,5 +1,7 @@
+/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createClockingStart } from '../../redux/clockings/clockingActions';
 
 const ClockingNew = ({
@@ -41,31 +43,37 @@ const ClockingNew = ({
       <h1>New Clocking</h1>
       <form>
         <div className="mb-3">
-          <label className="form-label">Topic</label>
-          <input
-            type="text"
-            className="form-control"
-            value={topic ?? ''}
-            onChange={(e) => setTopic(e.target.value)}
-          />
+          <label className="form-label" htmlFor="topic">
+            Topic
+            <input
+              type="text"
+              className="form-control"
+              value={topic ?? ''}
+              onChange={(e) => setTopic(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Details</label>
-          <input
-            type="text"
-            className="form-control"
-            value={details ?? ''}
-            onChange={(e) => setDetails(e.target.value)}
-          />
+          <label className="form-label" htmlFor="details">
+            Details
+            <input
+              type="text"
+              className="form-control"
+              value={details ?? ''}
+              onChange={(e) => setDetails(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Duration</label>
-          <input
-            type="number"
-            className="form-control"
-            value={duration ?? ''}
-            onChange={(e) => setDuration(e.target.value)}
-          />
+          <label className="form-label" htmlFor="duration">
+            Duration
+            <input
+              type="number"
+              className="form-control"
+              value={duration ?? ''}
+              onChange={(e) => setDuration(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
           <select
@@ -88,6 +96,13 @@ const ClockingNew = ({
       </form>
     </div>
   );
+};
+
+ClockingNew.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  subjects: PropTypes.objectOf(PropTypes.object).isRequired,
+  createClocking: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

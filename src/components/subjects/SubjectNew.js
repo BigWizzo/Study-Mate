@@ -1,4 +1,6 @@
+/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSubjectStart } from '../../redux/subjects/subjectActions';
 
@@ -33,22 +35,26 @@ const SubjectNew = ({ createSubject, history, student }) => {
       <h1>New Subject</h1>
       <form>
         <div className="mb-3">
-          <label className="form-label">Title</label>
-          <input
-            type="text"
-            className="form-control"
-            value={title ?? ''}
-            onChange={(e) => setTitle(e.target.value)}
-          />
+          <label className="form-label" htmlFor="title">
+            Title
+            <input
+              type="text"
+              className="form-control"
+              value={title ?? ''}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Description</label>
-          <input
-            type="text"
-            className="form-control"
-            value={description ?? ''}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <label className="form-label" htmlFor="title">
+            Description
+            <input
+              type="text"
+              className="form-control"
+              value={description ?? ''}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </label>
         </div>
         <button type="submit" className="btn btn-primary" onClick={addSubject}>
           Create Subject
@@ -56,6 +62,12 @@ const SubjectNew = ({ createSubject, history, student }) => {
       </form>
     </div>
   );
+};
+
+SubjectNew.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  createSubject: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

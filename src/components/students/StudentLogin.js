@@ -1,5 +1,7 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { loginStudentStart } from '../../redux/students/studentActions';
 
 const StudentLogin = ({ logStudent, student, history }) => {
@@ -32,23 +34,27 @@ const StudentLogin = ({ logStudent, student, history }) => {
       )}
       <form>
         <div className="mb-3">
-          <label className="form-label">User Name</label>
-          <input
-            type="text"
-            className="form-control"
-            value={username ?? ''}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <label className="form-label" htmlFor="username">
+            User Name
+            <input
+              type="text"
+              className="form-control"
+              value={username ?? ''}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
         </div>
         <div className="mb-3">
-          <label className="form-label">Password</label>
-          <input
-            type="text"
-            className="form-control"
-            label="Password"
-            value={password ?? ''}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <label className="form-label" htmlFor="username">
+            Password
+            <input
+              type="text"
+              className="form-control"
+              label="Password"
+              value={password ?? ''}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
         </div>
         <button
           type="submit"
@@ -63,6 +69,12 @@ const StudentLogin = ({ logStudent, student, history }) => {
       </div>
     </div>
   );
+};
+
+StudentLogin.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  logStudent: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

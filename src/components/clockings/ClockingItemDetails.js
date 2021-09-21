@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useParams, withRouter } from 'react-router-dom';
 import { deleteClockingStart } from '../../redux/clockings/clockingActions';
@@ -17,7 +18,7 @@ const ClockingItemDetails = ({
     }
   }, [student, history]);
 
-  const clocking = clockings.filter((c) => c.id === parseInt(id));
+  const clocking = clockings.filter((c) => c.id === parseInt(id, 10));
 
   const editClocking = () => {
     history.push(`/clockings/${id}/edit`);
@@ -62,6 +63,13 @@ const ClockingItemDetails = ({
       </button>
     </div>
   );
+};
+
+ClockingItemDetails.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  clockings: PropTypes.objectOf(PropTypes.object).isRequired,
+  deleteClocking: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

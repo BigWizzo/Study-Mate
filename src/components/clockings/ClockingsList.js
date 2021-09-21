@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { clockingFetchRequest } from '../../redux/clockings/clockingActions';
 import ClockingListItem from './ClockingListItem';
 import { dateShort } from '../../utils/utils';
@@ -35,6 +36,13 @@ const ClockingsList = ({
       )}
     </div>
   );
+};
+
+ClockingsList.propTypes = {
+  student: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  clockings: PropTypes.objectOf(PropTypes.object).isRequired,
+  loadClockings: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
