@@ -38,7 +38,7 @@ To get a local copy up and running follow these simple example steps.
 - cd Study-Mate
 - run `npm install`
 - run `npm start`
-- Open `http://localhost:3000/` in your browser.
+- Open `http://localhost:3000/` from your browser.
 
 ### Run Tests
 
