@@ -9,7 +9,7 @@ const ClockingsList = ({ loadClockings, clockings, history, student }) => {
 
   useEffect(() => {
     if (!student) {
-      history.push('./login');
+      history.push('/login');
     } else {
       loadClockings(id);
     }

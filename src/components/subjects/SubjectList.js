@@ -36,7 +36,9 @@ const SubjectList = ({ loadSubjects, subjects, history, student }) => {
               </div>
             ))
           ) : (
-            <div>Nothing to show yet</div>
+            <div className="text-center">
+              Nothing to show yet. Please add some subjects
+            </div>
           )}
         </div>
       </div>
