@@ -20,11 +20,9 @@ function App({ student }) {
       <div className="container-fluid">
         <Switch>
           <Route path="/" component={SubjectList} exact />
-          <Route path="/study-mate-frontend" component={SubjectList} />
-          <Route path="/subjects" component={SubjectList} />
           <Route path="/login" component={StudentLogin} />
           <Route path="/signup" component={StudentCreate} />
-          <Route path="/subjects/new" component={SubjectNew} />
+          <Route path="/subjects/new" component={SubjectNew} exact />
           <Route path="/subjects/:id" component={ClockingsList} />
           <Route path="/clockings/new" component={ClockingNew} />
           <Route path="/clockings/:id" component={ClockingItemDetails} exact />

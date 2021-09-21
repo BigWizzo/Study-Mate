@@ -2,7 +2,6 @@
   "name": "study-mate-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@babel/core": "7.x",
     "@babel/eslint-parser": "7.x",
