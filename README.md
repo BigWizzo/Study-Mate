@@ -30,6 +30,7 @@ Open [Live Version Link](https://study-mate-frontend.netlify.app/login)
 
 - React
 - Yarn / npm
+- Back end repo: [https://github.com/BigWizzo/Study-Mate-API](https://github.com/BigWizzo/Study-Mate-API/tree/feature/authentication)
 
 ## Getting Started
 
@@ -45,7 +46,8 @@ To get a local copy up and running follow these simple example steps.
 - Open `http://localhost:3000/` from your browser.
 
 ### Run Tests
-
+- For you to be able to run tests. The Front end must be connected to the Backend.
+- So make sure the back end repo is running on port 5000 (Check the repo's README file)
 - run `npm run test`
 
 ## Authors
