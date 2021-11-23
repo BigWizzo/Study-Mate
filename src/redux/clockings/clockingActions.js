@@ -1,0 +1,61 @@
+import clockingActionTypes from './clockingActionTypes';
+
+export const clockingFetchRequest = (id) => ({
+  type: clockingActionTypes.CLOCKINGS_FETCH_REQUEST,
+  payload: { id },
+});
+
+export const clockingFetchSuccess = (clockingDetails) => ({
+  type: clockingActionTypes.CLOCKINGS_FETCH_SUCCESS,
+  payload: clockingDetails,
+});
+
+export const clockingFetchFailure = (error) => ({
+  type: clockingActionTypes.CLOCKINGS_FETCH_FAILURE,
+  payload: error,
+});
+
+export const createClockingStart = (clockingDetails) => ({
+  type: clockingActionTypes.CREATE_CLOCKING_START,
+  payload: clockingDetails,
+});
+
+export const createClockingSuccess = (clockingDetails) => ({
+  type: clockingActionTypes.CREATE_CLOCKING_SUCCESS,
+  payload: clockingDetails,
+});
+
+export const createClockingFailure = (error) => ({
+  type: clockingActionTypes.CREATE_CLOCKING_FAILURE,
+  payload: error,
+});
+
+export const deleteClockingStart = (clockingId) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_START,
+  payload: clockingId,
+});
+
+export const deleteClockingSuccess = (clockingId) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_SUCCESS,
+  payload: clockingId,
+});
+
+export const deleteClockingFailure = (error) => ({
+  type: clockingActionTypes.DELETE_CLOCKING_FAILURE,
+  payload: error,
+});
+
+export const editClockingStart = (clocking) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_START,
+  payload: clocking,
+});
+
+export const editClockingSuccess = (clocking) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_SUCCESS,
+  payload: clocking,
+});
+
+export const editClockingFailure = (error) => ({
+  type: clockingActionTypes.EDIT_CLOCKING_FAILURE,
+  payload: error,
+});

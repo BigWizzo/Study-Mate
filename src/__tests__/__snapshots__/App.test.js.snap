@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Covid19-Catalogue-Board Application 1`] = `
+Array [
+  <div
+    className="appheader text-center row g-0 align-items-center bg-blue"
+  >
+    <h3
+      className="text-light"
+    >
+      Study Mate
+    </h3>
+  </div>,
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="container-fliuid"
+    >
+      <div
+        className="row py-3 mb-2 bg-white"
+      >
+        <span
+          className="col-2 text-center"
+        >
+          <i
+            className="fas fa-angle-left"
+          />
+        </span>
+        <span
+          className="col-8 text-center"
+        >
+          23 November 2021
+        </span>
+        <span
+          className="col-2 text-center"
+        >
+          <i
+            className="fas fa-angle-right"
+          />
+        </span>
+      </div>
+      <h1
+        className="text-center my-2"
+      >
+        Subjects
+      </h1>
+      <div
+        className="row"
+      >
+        <div
+          className="text-center"
+        >
+          Nothing to show yet. Please add some subjects
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
